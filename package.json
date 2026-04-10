@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "homepage": "https://FelipeRuizM.github.io/hevy-visualizer",
   "dependencies": {
     "date-fns": "^4.1.0",
     "firebase": "^12.12.0",

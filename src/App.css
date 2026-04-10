@@ -1,1 +1,43 @@
-/* cleared */
+/* ── Responsive overrides ──────────────────────────────── */
+
+/* Dashboard: charts grid */
+.dashboard-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Dashboard: overview metrics - allow smaller cards */
+  .overview-metrics-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Workouts: log form metadata inputs - stack on mobile */
+  .log-metadata-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Workouts: sets row scroll container */
+  .sets-scroll-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 400px) {
+  .overview-metrics-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Keyframe used across pages ── */
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.4; }
+}

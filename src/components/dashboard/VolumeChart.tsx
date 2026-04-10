@@ -78,7 +78,7 @@ export const VolumeChart: React.FC<Props> = ({ workouts }) => {
               contentStyle={{ background: 'var(--bg-darker)', border: '1px solid var(--glass-border)', borderRadius: '12px' }}
               itemStyle={{ color: 'var(--accent-pink-main)', fontWeight: 'bold' }}
               labelStyle={{ color: 'var(--text-secondary)', marginBottom: '4px' }}
-              formatter={(value: number) => [`${value.toLocaleString()} ${unit}`, 'Volume']}
+              formatter={((value: unknown) => [`${Number(value ?? 0).toLocaleString()} ${unit}`, 'Volume']) as any}
             />
             <Area 
               type="monotone" 

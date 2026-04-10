@@ -45,18 +45,9 @@ export const Dashboard: React.FC<any> = ({ workouts }) => {
       <h2 style={{ marginBottom: '24px', letterSpacing: '-0.02em', fontFamily: 'Outfit' }}>Analytics Overview</h2>
       <OverviewMetrics workouts={filteredWorkouts} />
       
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-        gap: '24px',
-        marginBottom: '24px'
-      }}>
-         <div style={{ gridColumn: '1 / -1', '@media (min-width: 1200px)': { gridColumn: 'auto / span 2' } } as any}>
-           <VolumeChart workouts={filteredWorkouts} />
-         </div>
-         <div style={{ gridColumn: '1 / -1', '@media (min-width: 1200px)': { gridColumn: 'auto' } } as any}>
-           <MuscleChart workouts={filteredWorkouts} />
-         </div>
+      <div className="dashboard-charts-grid">
+        <VolumeChart workouts={filteredWorkouts} />
+        <MuscleChart workouts={filteredWorkouts} />
       </div>
     </div>
   );

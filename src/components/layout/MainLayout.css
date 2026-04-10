@@ -1,20 +1,46 @@
 .dashboard-layout {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 240px 1fr;
   min-height: 100vh;
   gap: 24px;
   padding: 24px;
   max-width: 1600px;
   margin: 0 auto;
+  transition: grid-template-columns 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dashboard-layout.sidebar-collapsed {
+  grid-template-columns: 64px 1fr;
 }
 
 .dashboard-main {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  min-width: 0; /* prevent grid blowout */
 }
 
 .dashboard-content {
   flex: 1;
   border-radius: 16px;
+  min-width: 0;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  /* Sidebar is hidden via its own CSS; this ensures the grid collapses */
+  .dashboard-layout.sidebar-collapsed {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-content {
+    /* Clears the fixed BottomNav (64px) + iPhone safe area */
+    padding-bottom: calc(64px + env(safe-area-inset-bottom, 16px) + 16px);
+  }
 }

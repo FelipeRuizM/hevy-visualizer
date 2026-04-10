@@ -86,7 +86,7 @@ export const MuscleChart: React.FC<Props> = ({ workouts }) => {
               stroke="none"
               cornerRadius={6}
             >
-              {data.map((entry, index) => (
+              {data.map((_entry, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
