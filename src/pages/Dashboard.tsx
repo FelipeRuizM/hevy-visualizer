@@ -1,18 +1,47 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { OverviewMetrics } from '../components/dashboard/OverviewMetrics';
 import { VolumeChart } from '../components/dashboard/VolumeChart';
 import { MuscleChart } from '../components/dashboard/MuscleChart';
-import type { WorkoutSet } from '../utils/csvParser';
+import { FilterBar, type SplitFilter, type TimeframeFilter } from '../components/dashboard/FilterBar';
+import { subWeeks, subMonths, subYears } from 'date-fns';
 
-interface Props {
-  workouts: WorkoutSet[];
-}
+export const Dashboard: React.FC<any> = ({ workouts }) => {
+  const [splitFilter, setSplitFilter] = useState<SplitFilter>('All');
+  const [timeframeFilter, setTimeframeFilter] = useState<TimeframeFilter>('All Time');
 
-export const Dashboard: React.FC<Props> = ({ workouts }) => {
+  const filteredWorkouts = useMemo(() => {
+    return workouts.filter((w: any) => {
+      // Direct pass mapping checks locally populated Split states
+      if (splitFilter !== 'All' && w.splitType !== splitFilter) return false;
+      
+      if (timeframeFilter !== 'All Time') {
+        const now = new Date();
+        let cutoff = new Date();
+        
+        if (timeframeFilter === 'Last Week') cutoff = subWeeks(now, 1);
+        else if (timeframeFilter === 'Last Month') cutoff = subMonths(now, 1);
+        else if (timeframeFilter === 'Last 3 Months') cutoff = subMonths(now, 3);
+        else if (timeframeFilter === 'Last Year') cutoff = subYears(now, 1);
+        
+        if (w.startTime < cutoff) return false;
+      }
+      
+      return true;
+    });
+  }, [workouts, splitFilter, timeframeFilter]);
+
   return (
     <div style={{ padding: '0 32px', animation: 'fadeIn 0.5s ease-out' }}>
+      
+      <FilterBar 
+        splitFilter={splitFilter} 
+        setSplitFilter={setSplitFilter}
+        timeframeFilter={timeframeFilter}
+        setTimeframeFilter={setTimeframeFilter}
+      />
+      
       <h2 style={{ marginBottom: '24px', letterSpacing: '-0.02em', fontFamily: 'Outfit' }}>Analytics Overview</h2>
-      <OverviewMetrics workouts={workouts} />
+      <OverviewMetrics workouts={filteredWorkouts} />
       
       <div style={{
         display: 'grid',
@@ -21,10 +50,10 @@ export const Dashboard: React.FC<Props> = ({ workouts }) => {
         marginBottom: '24px'
       }}>
          <div style={{ gridColumn: '1 / -1', '@media (min-width: 1200px)': { gridColumn: 'auto / span 2' } } as any}>
-           <VolumeChart workouts={workouts} />
+           <VolumeChart workouts={filteredWorkouts} />
          </div>
          <div style={{ gridColumn: '1 / -1', '@media (min-width: 1200px)': { gridColumn: 'auto' } } as any}>
-           <MuscleChart workouts={workouts} />
+           <MuscleChart workouts={filteredWorkouts} />
          </div>
       </div>
     </div>

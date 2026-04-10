@@ -2,9 +2,9 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import { TopNavigation } from './TopNavigation';
-import './DashboardLayout.css';
+import './MainLayout.css';
 
-export const DashboardLayout: React.FC = () => {
+export const MainLayout: React.FC = () => {
   return (
     <div className="dashboard-layout fade-in">
       <Sidebar />

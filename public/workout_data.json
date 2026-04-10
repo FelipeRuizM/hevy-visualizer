@@ -1,0 +1,4599 @@
+[
+  {
+    "title": "escape the BACKrooms",
+    "start_time": "8 Apr 2026, 16:50",
+    "end_time": "8 Apr 2026, 17:43",
+    "description": "melhorando cada vez mais nos pull ups to feliz",
+    "exercises": [
+      {
+        "exercise_title": "Pull Up",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "reps": 7
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "reps": 5
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "reps": 3
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "reps": 5
+          }
+        ]
+      },
+      {
+        "exercise_title": "Straight Arm Lat Pulldown (Cable)",
+        "exercise_notes": "senti o ombro direito // simplesmente uma bosta",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 45,
+            "reps": 8
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Single Arm Lat Pulldown",
+        "exercise_notes": "voltei pra esse, mil vezes melhor",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Rear Delt Reverse Fly (Machine)",
+        "exercise_notes": "boa carga",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bicep Curl (Dumbbell)",
+        "exercise_notes": "da pra aumentar dnv…….",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 10,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 20,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 20,
+            "reps": 15
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 20,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bicep Curl (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 30,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 30,
+            "reps": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "peito pascoal",
+    "start_time": "6 Apr 2026, 17:18",
+    "end_time": "6 Apr 2026, 18:03",
+    "description": "",
+    "exercises": [
+      {
+        "exercise_title": "Bench Press (Barbell)",
+        "exercise_notes": "80kg subiu TEGAAAAAA",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 20,
+            "reps": 30
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 60,
+            "reps": 3
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 70,
+            "reps": 1
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 80,
+            "reps": 1
+          },
+          {
+            "set_index": 4,
+            "set_type": "normal",
+            "weight_kg": 60,
+            "reps": 10
+          },
+          {
+            "set_index": 5,
+            "set_type": "normal",
+            "weight_kg": 60,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Chest Fly (Machine)",
+        "exercise_notes": "ta no 6",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 55,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 55,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 55,
+            "reps": 9
+          }
+        ]
+      },
+      {
+        "exercise_title": "Single Arm Lateral Raise (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 12,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 12,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 12,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 12,
+            "reps": 10
+          },
+          {
+            "set_index": 4,
+            "set_type": "normal",
+            "weight_kg": 10,
+            "reps": 9
+          },
+          {
+            "set_index": 5,
+            "set_type": "normal",
+            "weight_kg": 10,
+            "reps": 9
+          }
+        ]
+      },
+      {
+        "exercise_title": "Triceps Pushdown",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 12
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "mudu leg",
+    "start_time": "3 Apr 2026, 16:41",
+    "end_time": "3 Apr 2026, 17:39",
+    "description": "",
+    "exercises": [
+      {
+        "exercise_title": "Leg Press Horizontal (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 25,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 45,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Squat (Smith Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 60,
+            "reps": 8
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 60,
+            "reps": 8
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 50,
+            "reps": 6
+          }
+        ]
+      },
+      {
+        "exercise_title": "Leg Extension (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 60,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 60,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 60,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Seated Leg Curl (Machine)",
+        "exercise_notes": "acho q da pra aumentar na prox",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 65,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 70,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 70,
+            "reps": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "BACK to the future",
+    "start_time": "1 Apr 2026, 16:49",
+    "end_time": "1 Apr 2026, 17:43",
+    "description": "morri pprt",
+    "exercises": [
+      {
+        "exercise_title": "Pull Up",
+        "exercise_notes": "closed grip\n\nue agr ta contando o pull up como volume antes nao tava",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "reps": 6
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "reps": 5
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "reps": 5
+          }
+        ]
+      },
+      {
+        "exercise_title": "Single Arm Lat Pulldown",
+        "exercise_notes": "tirei os 5 pq nao comecei com ele mas dava pra fzr com 40 se for o primeiro",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 4,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 5,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Seated Cable Row - Bar Wide Grip",
+        "exercise_notes": "morri",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bicep Curl (Dumbbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 18,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 18,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 20,
+            "reps": 12
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 20,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Back Extension (Weighted Hyperextension)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "reps": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "push sem piedade",
+    "start_time": "23 Mar 2026, 17:29",
+    "end_time": "23 Mar 2026, 18:15",
+    "description": "me sentindo gostoso",
+    "exercises": [
+      {
+        "exercise_title": "Incline Bench Press (Dumbbell)",
+        "exercise_notes": "continuo sentindo o cotovelo no ultimo set :/",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 24,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 32,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 32,
+            "reps": 12
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 32,
+            "reps": 9
+          }
+        ]
+      },
+      {
+        "exercise_title": "Lateral Raise (Dumbbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 16,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 16,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 16,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Chest Fly (Machine)",
+        "exercise_notes": "40kgs x 12 nas passadas (fui burrao e coloquei a maquina errada 🤦🏻‍♂️)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 52.5,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 52.5,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 52.5,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Rear Delt Reverse Fly (Machine)",
+        "exercise_notes": "dava pra ir mais hein",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 20,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 20,
+            "reps": 15
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 25,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Triceps Pushdown",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 45,
+            "reps": 8
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 45,
+            "reps": 8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "lore is BACK (DAY)",
+    "start_time": "19 Mar 2026, 20:34",
+    "end_time": "19 Mar 2026, 21:29",
+    "description": "esqueci da foto la ent faltou murilo",
+    "exercises": [
+      {
+        "exercise_title": "Single Arm Lat Pulldown",
+        "exercise_notes": "primeira vez fazendo\naprovadissimo ✅",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 15,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "warmup",
+            "weight_kg": 15,
+            "reps": 15
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 4,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 12
+          },
+          {
+            "set_index": 5,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 12
+          },
+          {
+            "set_index": 6,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 12
+          },
+          {
+            "set_index": 7,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Pull Up",
+        "exercise_notes": "achei q iam mais kkkkk\nclosed grip",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "reps": 4
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "reps": 3
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bicep Curl (Dumbbell)",
+        "exercise_notes": "fiz sentado no banco",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 16,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 18,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 18,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Seated Cable Row - Bar Wide Grip",
+        "exercise_notes": "usando a segunda maior barra daquela barra boa",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bicep Curl (Dumbbell)",
+        "exercise_notes": "agr fiz em pe e alternaco",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 16,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 16,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 16,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Back Extension (Weighted Hyperextension)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 5,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 5,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 5,
+            "reps": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "push triceps destruction",
+    "start_time": "17 Mar 2026, 20:36",
+    "end_time": "17 Mar 2026, 21:36",
+    "description": "",
+    "exercises": [
+      {
+        "exercise_title": "Cable Fly Crossovers",
+        "exercise_notes": "dei uma roubada no ultimo mas eh isso kkkk",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 30,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 12
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Incline Bench Press (Smith Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 44,
+            "reps": 5
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 3
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Single Arm Lateral Raise (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 12,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 12,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 12,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 12,
+            "reps": 10
+          },
+          {
+            "set_index": 4,
+            "set_type": "normal",
+            "weight_kg": 10,
+            "reps": 10
+          },
+          {
+            "set_index": 5,
+            "set_type": "normal",
+            "weight_kg": 10,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Triceps Pushdown",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 45,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 45,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Single Arm Triceps Pushdown (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 10,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 10,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 12,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 12,
+            "reps": 10
+          },
+          {
+            "set_index": 4,
+            "set_type": "dropset",
+            "weight_kg": 15,
+            "reps": 5
+          },
+          {
+            "set_index": 5,
+            "set_type": "dropset",
+            "weight_kg": 15,
+            "reps": 5
+          },
+          {
+            "set_index": 6,
+            "set_type": "dropset",
+            "weight_kg": 12,
+            "reps": 3
+          },
+          {
+            "set_index": 7,
+            "set_type": "dropset",
+            "weight_kg": 12,
+            "reps": 3
+          },
+          {
+            "set_index": 8,
+            "set_type": "dropset",
+            "weight_kg": 7,
+            "reps": 4
+          },
+          {
+            "set_index": 9,
+            "set_type": "dropset",
+            "weight_kg": 7,
+            "reps": 4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "pull sinistro",
+    "start_time": "14 Mar 2026, 18:15",
+    "end_time": "14 Mar 2026, 19:13",
+    "description": "murilao dormir // gym day num ?/? without lore lore lore",
+    "exercises": [
+      {
+        "exercise_title": "Single Arm Lat Pulldown",
+        "exercise_notes": "primeira vez fazendo\naprovadissimo ✅",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 15,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "warmup",
+            "weight_kg": 15,
+            "reps": 15
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 4,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 5,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 6,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          },
+          {
+            "set_index": 7,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Pull Up",
+        "exercise_notes": "achei q iam mais kkkkk\nclosed grip",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "reps": 3
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "reps": 4
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "reps": 3
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "reps": 3
+          }
+        ]
+      },
+      {
+        "exercise_title": "Seated Cable Row - Bar Wide Grip",
+        "exercise_notes": "usando a segunda maior barra daquela barra boa",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 17.5,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 27.5,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 37.5,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bicep Curl (Dumbbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 16,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 18,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 18,
+            "reps": 12
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 18,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bicep Curl (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 30,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 30,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 30,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Back Extension (Weighted Hyperextension)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 5,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 5,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 5,
+            "reps": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "pernocas com o murilocas",
+    "start_time": "11 Mar 2026, 16:51",
+    "end_time": "11 Mar 2026, 17:36",
+    "description": "",
+    "exercises": [
+      {
+        "exercise_title": "Leg Extension (Machine)",
+        "exercise_notes": "PRRRRR",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 30,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 60,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 80,
+            "reps": 12
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 80,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Seated Leg Curl (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 50,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 70,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 70,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Hip Adduction (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 20,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 20,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Leg Press Horizontal (Machine)",
+        "exercise_notes": "the most humbling machine oat\n\njoelho doendo dos de tentar levantar 80kg kkkk",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 20,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 30,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 25,
+            "reps": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Push com Murilao",
+    "start_time": "9 Mar 2026, 16:43",
+    "end_time": "9 Mar 2026, 17:43",
+    "description": "tive que dar um cagote mid workout",
+    "exercises": [
+      {
+        "exercise_title": "Cable Fly Crossovers",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 20,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Incline Bench Press (Dumbbell)",
+        "exercise_notes": "senti o cotovelo no ultimo set :/",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 28,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 28,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 28,
+            "reps": 5
+          }
+        ]
+      },
+      {
+        "exercise_title": "Shoulder Press (Dumbbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 20,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 20,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 20,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Single Arm Lateral Raise (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 10,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 10,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 10,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 10,
+            "reps": 10
+          },
+          {
+            "set_index": 4,
+            "set_type": "normal",
+            "weight_kg": 10,
+            "reps": 10
+          },
+          {
+            "set_index": 5,
+            "set_type": "normal",
+            "weight_kg": 10,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Triceps Rope Pushdown",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 20,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 30,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 30,
+            "reps": 8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "pull lero lore lore",
+    "start_time": "7 Mar 2026, 17:50",
+    "end_time": "7 Mar 2026, 18:50",
+    "description": "the whole world wants to know, where’s lorena? workout num 3/? with no lore",
+    "exercises": [
+      {
+        "exercise_title": "Bent Over Row (Barbell)",
+        "exercise_notes": "dava pra fazer mas umas hein, tvlz aumentar o peso na prox?",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 20,
+            "reps": 20
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 50,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 50,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Lat Pulldown (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 45,
+            "reps": 8
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bicep Curl (Barbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 17.5,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 22.5,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 22.5,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bicep Curl (Dumbbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 16,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 16,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 16,
+            "reps": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "pernocas",
+    "start_time": "4 Mar 2026, 17:13",
+    "end_time": "4 Mar 2026, 17:58",
+    "description": "lorena i miss you",
+    "exercises": [
+      {
+        "exercise_title": "Squat (Barbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 20,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 8
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 8
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Leg Extension (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 50,
+            "reps": 8
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 30,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 30,
+            "reps": 12
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 30,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Hip Abduction (Machine)",
+        "exercise_notes": "tava esperando a leg extension mas alugaram a máquina",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 15,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 15,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "exercise_title": "Romanian Deadlift (Dumbbell)",
+        "exercise_notes": "8 em cada",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 16,
+            "reps": 8
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 16,
+            "reps": 8
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 16,
+            "reps": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Começando um PPL",
+    "start_time": "12 Feb 2026, 15:28",
+    "end_time": "12 Feb 2026, 16:58",
+    "description": "demorei mais pq tava aprendendo onde tava tudo // treino meio meh",
+    "exercises": [
+      {
+        "exercise_title": "Butterfly (Pec Deck)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 40,
+            "reps": 8
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 35,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Incline Bench Press (Dumbbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 28,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 28,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 28,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Shoulder Press (Dumbbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 24,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 24,
+            "reps": 8
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 24,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Single Arm Lateral Raise (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 10,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 10,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 10,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 10,
+            "reps": 10
+          },
+          {
+            "set_index": 4,
+            "set_type": "normal",
+            "weight_kg": 10,
+            "reps": 10
+          },
+          {
+            "set_index": 5,
+            "set_type": "normal",
+            "weight_kg": 10,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Triceps Rope Pushdown",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 20,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 20,
+            "reps": 15
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 20,
+            "reps": 15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "lore 🦵🦵",
+    "start_time": "17 Jan 2026, 00:25",
+    "end_time": "17 Jan 2026, 02:02",
+    "description": "i wasn’t expecting the flash",
+    "exercises": [
+      {
+        "exercise_title": "Leg Extension (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 45.36,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 72.57,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 72.57,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 72.57,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Squat (Smith Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 61.24,
+            "reps": 6
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 52.16,
+            "reps": 8
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 52.16,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Lying Leg Curl (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 29.48,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Calf Extension (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "loreupper",
+    "start_time": "14 Jan 2026, 01:51",
+    "end_time": "14 Jan 2026, 03:33",
+    "description": "i felt like a creep taking this pic LMAO",
+    "exercises": [
+      {
+        "exercise_title": "Lat Pulldown (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 31.75,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Incline Bench Press (Dumbbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Shoulder Press (Dumbbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 13.61,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 13.61,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 13.61,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Single Arm Triceps Pushdown (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bicep Curl (Dumbbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "lorelegs",
+    "start_time": "19 Dec 2025, 23:06",
+    "end_time": "20 Dec 2025, 00:06",
+    "description": "",
+    "exercises": [
+      {
+        "exercise_title": "Leg Extension (Machine)",
+        "exercise_notes": "legal legal",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 45.36,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 72.57,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 72.57,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 72.57,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Romanian Deadlift (Dumbbell)",
+        "exercise_notes": "morri nesse leg extension",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 15.88,
+            "reps": 8
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 15.88,
+            "reps": 8
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 15.88,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Hip Adduction (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 20.41,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 47.63,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 47.63,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Calf Extension (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 43.09,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 43.09,
+            "reps": 15
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 43.09,
+            "reps": 15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "oi sumida",
+    "start_time": "18 Dec 2025, 03:24",
+    "end_time": "18 Dec 2025, 04:06",
+    "description": "",
+    "exercises": [
+      {
+        "exercise_title": "Lateral Raise (Dumbbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 9.07,
+            "reps": 18
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 8
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Single Arm Lateral Raise (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 9.07,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 9.07,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bicep Curl (Dumbbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 18.14,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Triceps Rope Pushdown",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 13.61,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Single Arm Triceps Pushdown (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "LORENA WHERE ARE YOU",
+    "start_time": "27 Nov 2025, 05:04",
+    "end_time": "27 Nov 2025, 05:44",
+    "description": "",
+    "exercises": [
+      {
+        "exercise_title": "Single Arm Lateral Raise (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 6.8,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 9.07,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 9.07,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 9.07,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Seated Shoulder Press (Machine)",
+        "exercise_notes": "peso ideial pra n sentir o cotovelo, senti so nas ultimas duas reps",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 31.75,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 31.75,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 31.75,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Rear Delt Reverse Fly (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Single Arm Triceps Pushdown (Cable)",
+        "exercise_notes": "fazendo o do X (PIKA TA??)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "odeio treine costas",
+    "start_time": "14 Nov 2025, 17:41",
+    "end_time": "14 Nov 2025, 18:25",
+    "description": "",
+    "exercises": [
+      {
+        "exercise_title": "Seated Cable Row - V Grip (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 22.68,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Chin Up (Assisted)",
+        "exercise_notes": "pegada aberta\nmeio decepcionado mas eh isso",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "reps": 4
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 7
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 31.75,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Back Extension (Weighted Hyperextension)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Single Arm Lateral Raise (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 9.07,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 9.07,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 9.07,
+            "reps": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "the humbling workout",
+    "start_time": "12 Nov 2025, 21:38",
+    "end_time": "12 Nov 2025, 22:39",
+    "description": "",
+    "exercises": [
+      {
+        "exercise_title": "Hip Thrust (Barbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "reps": 20
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 81.65,
+            "reps": 8
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 63.5,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Hack Squat (Machine)",
+        "exercise_notes": "feeling my knees :/",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 8
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Romanian Deadlift (Dumbbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 15.88,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 15.88,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 15.88,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Hip Adduction (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 34.02,
+            "reps": 20
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 34.02,
+            "reps": 15
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "exercise_title": "Calf Extension (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 15
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "peibitri",
+    "start_time": "9 Nov 2025, 03:20",
+    "end_time": "9 Nov 2025, 04:08",
+    "description": "",
+    "exercises": [
+      {
+        "exercise_title": "Cable Fly Crossovers",
+        "exercise_notes": "mudei a base, botei os dois pes juntos e tive q baixar a carga\n\nsenti bastante o ombro (nao dor)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 18.14,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 31.75,
+            "reps": 8
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 31.75,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 31.75,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Preacher Curl (Barbell)",
+        "exercise_notes": "achei q o 60 ia de boas, achei errado\n\nto suspeitando q esse EZ bar eh mais pesada doq 20lbs kkkkk",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 18.14,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 27.22,
+            "reps": 6
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bicep Curl (Dumbbell)",
+        "exercise_notes": "to mei morto do outro ja, baixei pra 20lbs",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Single Arm Triceps Pushdown (Cable)",
+        "exercise_notes": "mas aí eu fui burrao e anotei errado da última vez",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 13.61,
+            "reps": 20
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "leg day with my gym sis",
+    "start_time": "7 Nov 2025, 02:14",
+    "end_time": "7 Nov 2025, 03:44",
+    "description": "",
+    "exercises": [
+      {
+        "exercise_title": "Hip Thrust (Barbell)",
+        "exercise_notes": "lorenas machine",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "reps": 20
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 81.65,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 104.33,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Squat (Smith Machine)",
+        "exercise_notes": "i could literally hear my knees popping everytime i went down (la ele)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 52.16,
+            "reps": 8
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 38.56,
+            "reps": 8
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 38.56,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Romanian Deadlift (Barbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 20.41,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 20.41,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 24.95,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Hip Abduction (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 13.61,
+            "reps": 8
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 13.61,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Hip Adduction (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 34.02,
+            "reps": 20
+          }
+        ]
+      },
+      {
+        "exercise_title": "Hanging Knee Raise",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "reps": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "peibitriiii",
+    "start_time": "24 Oct 2025, 02:31",
+    "end_time": "24 Oct 2025, 03:33",
+    "description": "",
+    "exercises": [
+      {
+        "exercise_title": "Incline Bench Press (Smith Machine)",
+        "exercise_notes": "pesadinn",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 20.41,
+            "reps": 25
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 61.24,
+            "reps": 8
+          },
+          {
+            "set_index": 2,
+            "set_type": "failure",
+            "weight_kg": 61.24,
+            "reps": 7
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 52.16,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Cable Fly Crossovers",
+        "exercise_notes": "pegado, forma tava meio merda",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 8
+          },
+          {
+            "set_index": 1,
+            "set_type": "failure",
+            "weight_kg": 45.36,
+            "reps": 7
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bicep Curl (Barbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 13.61,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 15
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 27.22,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 27.22,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Preacher Curl (Machine)",
+        "exercise_notes": "fazendo as reps mais podres ja vistas\n\nah fodase",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 6
+          }
+        ]
+      },
+      {
+        "exercise_title": "Triceps Pushdown",
+        "exercise_notes": "legal legal",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 24.95,
+            "reps": 20
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Single Arm Triceps Pushdown (Cable)",
+        "exercise_notes": "baixei o peso pra fazer igual a foto",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 13.61,
+            "reps": 8
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 11.34,
+            "reps": 8
+          },
+          {
+            "set_index": 2,
+            "set_type": "dropset",
+            "weight_kg": 11.34,
+            "reps": 6
+          },
+          {
+            "set_index": 3,
+            "set_type": "dropset",
+            "weight_kg": 6.8,
+            "reps": 6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "What’s your excuse?",
+    "start_time": "22 Oct 2025, 04:43",
+    "end_time": "22 Oct 2025, 05:50",
+    "description": "",
+    "exercises": [
+      {
+        "exercise_title": "Squat (Barbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 20.41,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 43.09,
+            "reps": 15
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 52.16,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 52.16,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Hack Squat (Machine)",
+        "exercise_notes": "idk i feel like i need to reduce the weight and go deeper",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "exercise_title": "Hip Adduction (Machine)",
+        "exercise_notes": "ja prevejo a dor nos dias seguintes",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 15
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "exercise_title": "Standing Calf Raise",
+        "exercise_notes": "famoso treino de vó",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "reps": 100
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "reps": 50
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "morri",
+    "start_time": "10 Oct 2025, 01:23",
+    "end_time": "10 Oct 2025, 02:14",
+    "description": "fazia um tempin q n treinava costas",
+    "exercises": [
+      {
+        "exercise_title": "Cable Fly Crossovers",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 18.14,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "exercise_title": "Incline Cable Fly",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 31.75,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 31.75,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Lat Pulldown (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Landmine Row",
+        "exercise_notes": "not exactly this exercise but that’s the closest thing i could find",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 7
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "biri vapt vupt",
+    "start_time": "3 Oct 2025, 13:10",
+    "end_time": "3 Oct 2025, 13:46",
+    "description": "pre trampo pra compensar a semana vagabundando no hollow knight",
+    "exercises": [
+      {
+        "exercise_title": "Bicep Curl (Barbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 13.61,
+            "reps": 20
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Triceps Rope Pushdown",
+        "exercise_notes": "a ultima foi top execucoes porcas, vamo ficar no 60 mesmo por enquanto",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 22.68,
+            "reps": 18
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 27.22,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 9
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bicep Curl (Cable)",
+        "exercise_notes": "na cordinha",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 27.22,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 31.75,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 31.75,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Lateral Raise (Dumbbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 8
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 8
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "perma meio meh",
+    "start_time": "26 Sep 2025, 02:03",
+    "end_time": "26 Sep 2025, 02:58",
+    "description": "faltou uma janta",
+    "exercises": [
+      {
+        "exercise_title": "Squat (Barbell)",
+        "exercise_notes": "focusing on going deeeeep on the squats",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 20.41,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 43.09,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 43.09,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Leg Extension (Machine)",
+        "exercise_notes": "passei mal dps desses squat pqp\npegar leve aq kkkk",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 54.43,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 54.43,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 54.43,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Romanian Deadlift (Dumbbell)",
+        "exercise_notes": "morrendo pqp",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 15.88,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 15.88,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 15.88,
+            "reps": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "peibitri",
+    "start_time": "19 Sep 2025, 01:41",
+    "end_time": "19 Sep 2025, 02:30",
+    "description": "",
+    "exercises": [
+      {
+        "exercise_title": "Incline Bench Press (Smith Machine)",
+        "exercise_notes": "bao",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 20.41,
+            "reps": 20
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 52.16,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 52.16,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bench Press (Dumbbell)",
+        "exercise_notes": "meh",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 9
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Cable Fly Crossovers",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Triceps Pushdown",
+        "exercise_notes": "both arms + i stink",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 24.95,
+            "reps": 20
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bicep Curl (Barbell)",
+        "exercise_notes": "de pe",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bicep Curl (Dumbbell)",
+        "exercise_notes": "alternado",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 8
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 8
+          },
+          {
+            "set_index": 2,
+            "set_type": "failure",
+            "weight_kg": 22.68,
+            "reps": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "braço ligero bala",
+    "start_time": "5 Sep 2025, 15:25",
+    "end_time": "5 Sep 2025, 16:04",
+    "description": "tava me sentindo frango, tive q ir treinar braço",
+    "exercises": [
+      {
+        "exercise_title": "Preacher Curl (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 18.14,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Triceps Pushdown",
+        "exercise_notes": "single arm",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 13.61,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 13.61,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 9.07,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "exercise_title": "Seated Palms Up Wrist Curl",
+        "exercise_notes": "15 each arm\n\ngostei mais dos sets de 15",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 13.61,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 13.61,
+            "reps": 15
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bicep Curl (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 27.22,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 31.75,
+            "reps": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "me and lore",
+    "start_time": "2 Sep 2025, 23:13",
+    "end_time": "3 Sep 2025, 01:03",
+    "description": "",
+    "exercises": [
+      {
+        "exercise_title": "Iso-Lateral Row (Machine)",
+        "exercise_notes": "one arm only",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 24.95,
+            "reps": 14
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 54.43,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 54.43,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 54.43,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Lat Pulldown (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 38.56,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Incline Bench Press (Dumbbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 31.75,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 8
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Shoulder Press (Dumbbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 13.61,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 8
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 15.88,
+            "reps": 8
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 15.88,
+            "reps": 5
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bicep Curl (Dumbbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 27.22,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "failure",
+            "weight_kg": 22.68,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "exercise_title": "Triceps Pushdown",
+        "exercise_notes": "different cable",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 13.61,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 13.61,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "failure",
+            "weight_kg": 11.34,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "exercise_title": "Treadmill",
+        "exercise_notes": "no idea but it was 3MPH",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "duration_seconds": 1800
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "pernocas",
+    "start_time": "28 Aug 2025, 01:01",
+    "end_time": "28 Aug 2025, 02:11",
+    "description": "going deep on squats",
+    "exercises": [
+      {
+        "exercise_title": "Hip Thrust (Barbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 81.65,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 122.47,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Squat (Barbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 20.41,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 43.09,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 61.24,
+            "reps": 6
+          },
+          {
+            "set_index": 3,
+            "set_type": "failure",
+            "weight_kg": 43.09,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Leg Press (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 40.82,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 81.65,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 122.47,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 122.47,
+            "reps": 8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "2 semanas sem treinar mas to de volta",
+    "start_time": "20 Aug 2025, 02:23",
+    "end_time": "20 Aug 2025, 03:43",
+    "description": "i forgor the photo",
+    "exercises": [
+      {
+        "exercise_title": "Cable Fly Crossovers",
+        "exercise_notes": "feeling gud",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 27.22,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 31.75,
+            "reps": 15
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 12
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Seated Shoulder Press (Machine)",
+        "exercise_notes": "infelizmente ainda sinto dor nos cotovelos nesse",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 22.68,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Lateral Raise (Dumbbell)",
+        "exercise_notes": "meti o loko no primeiro kkkk",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 18.14,
+            "reps": 8
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 13.61,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 13.61,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Triceps Pushdown",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 18.14,
+            "reps": 20
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 15
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "pernocas 🦵",
+    "start_time": "6 Aug 2025, 00:53",
+    "end_time": "6 Aug 2025, 01:57",
+    "description": "",
+    "exercises": [
+      {
+        "exercise_title": "Leg Press (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 40.82,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 81.65,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 122.47,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 154.22,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Leg Extension (Machine)",
+        "exercise_notes": "tava de boas, mas o ultimo fui ate morrer",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 54.43,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 58.97,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 63.5,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "failure",
+            "weight_kg": 72.57,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Lying Leg Curl (Machine)",
+        "exercise_notes": "já morri",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Hip Abduction (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 8
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 8
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "workout with the gym girls",
+    "start_time": "31 Jul 2025, 22:21",
+    "end_time": "31 Jul 2025, 23:53",
+    "description": "@lorenamor is missing the picture 😭😭",
+    "exercises": [
+      {
+        "exercise_title": "Iso-Lateral Row (Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 10
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Lat Pulldown - Close Grip (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 38.56,
+            "reps": 12
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bent Over Row (Barbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 43.09,
+            "reps": 8
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 43.09,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 43.09,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Incline Bench Press (Smith Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 52.16,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 52.16,
+            "reps": 6
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 47.63,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Overhead Press (Smith Machine)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 20.41,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 29.48,
+            "reps": 12
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 43.09,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Seated Dip Machine",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 52.16,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 52.16,
+            "reps": 15
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 58.97,
+            "reps": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "meus tricepi doi",
+    "start_time": "24 Jul 2025, 02:34",
+    "end_time": "24 Jul 2025, 03:23",
+    "description": "",
+    "exercises": [
+      {
+        "exercise_title": "Incline Bench Press (Smith Machine)",
+        "exercise_notes": "started to feel my elbows on set 2",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 20.41,
+            "reps": 20
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 43.09,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 52.16,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 56.7,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Butterfly (Pec Deck)",
+        "exercise_notes": "equipment’s SO bad i had to change to pulleys",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Cable Fly Crossovers",
+        "exercise_notes": "wayyy better",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 27.22,
+            "reps": 8
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 27.22,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 27.22,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Triceps Kickback (Dumbbell)",
+        "exercise_notes": "interesting, but idk",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 6.8,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 6.8,
+            "reps": 15
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 9.07,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 9.07,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Triceps Pushdown",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 45.36,
+            "reps": 15
+          },
+          {
+            "set_index": 2,
+            "set_type": "dropset",
+            "weight_kg": 45.36,
+            "reps": 5
+          },
+          {
+            "set_index": 3,
+            "set_type": "dropset",
+            "weight_kg": 36.29,
+            "reps": 5
+          },
+          {
+            "set_index": 4,
+            "set_type": "dropset",
+            "weight_kg": 27.22,
+            "reps": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "voltando pra casa nu",
+    "start_time": "14 Jul 2025, 03:29",
+    "end_time": "14 Jul 2025, 04:09",
+    "description": "",
+    "exercises": [
+      {
+        "exercise_title": "Lat Pulldown (Cable)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 22.68,
+            "reps": 25
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 49.9,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 54.43,
+            "reps": 8
+          },
+          {
+            "set_index": 3,
+            "set_type": "normal",
+            "weight_kg": 49.9,
+            "reps": 7
+          }
+        ]
+      },
+      {
+        "exercise_title": "Dumbbell Row",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 24.95,
+            "reps": 8
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 24.95,
+            "reps": 8
+          }
+        ]
+      },
+      {
+        "exercise_title": "Bent Over Row (Barbell)",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 43.09,
+            "reps": 8
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "reps": 9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Late night workout 🌙",
+    "start_time": "8 Jul 2025, 03:50",
+    "end_time": "8 Jul 2025, 04:37",
+    "description": "",
+    "exercises": [
+      {
+        "exercise_title": "Squat (Barbell)",
+        "exercise_notes": "minhas perna tao doendo",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "warmup",
+            "weight_kg": 20.41,
+            "reps": 15
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 29.48,
+            "reps": 15
+          },
+          {
+            "set_index": 2,
+            "set_type": "normal",
+            "weight_kg": 43.09,
+            "reps": 10
+          },
+          {
+            "set_index": 3,
+            "set_type": "failure",
+            "weight_kg": 52.16,
+            "reps": 10
+          }
+        ]
+      },
+      {
+        "exercise_title": "Hack Squat (Machine)",
+        "exercise_notes": "consigo nem andar direito",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 12
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 40.82,
+            "reps": 10
+          },
+          {
+            "set_index": 2,
+            "set_type": "failure",
+            "weight_kg": 40.82,
+            "reps": 15
+          }
+        ]
+      },
+      {
+        "exercise_title": "Lying Leg Curl (Machine)",
+        "exercise_notes": "como q eu vou voltar pra casa meu deus",
+        "sets": [
+          {
+            "set_index": 0,
+            "set_type": "normal",
+            "weight_kg": 36.29,
+            "reps": 5
+          },
+          {
+            "set_index": 1,
+            "set_type": "normal",
+            "weight_kg": 31.75,
+            "reps": 8
+          },
+          {
+            "set_index": 2,
+            "set_type": "failure",
+            "weight_kg": 31.75,
+            "reps": 10
+          }
+        ]
+      }
+    ]
+  }
+]
