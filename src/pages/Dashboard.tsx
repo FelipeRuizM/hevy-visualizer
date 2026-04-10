@@ -2,17 +2,19 @@ import React, { useState, useMemo } from 'react';
 import { OverviewMetrics } from '../components/dashboard/OverviewMetrics';
 import { VolumeChart } from '../components/dashboard/VolumeChart';
 import { MuscleChart } from '../components/dashboard/MuscleChart';
-import { FilterBar, type SplitFilter, type TimeframeFilter } from '../components/dashboard/FilterBar';
+import { FilterBar, type TimeframeFilter } from '../components/dashboard/FilterBar';
 import { subWeeks, subMonths, subYears } from 'date-fns';
 
 export const Dashboard: React.FC<any> = ({ workouts }) => {
-  const [splitFilter, setSplitFilter] = useState<SplitFilter>('All');
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [timeframeFilter, setTimeframeFilter] = useState<TimeframeFilter>('All Time');
 
   const filteredWorkouts = useMemo(() => {
     return workouts.filter((w: any) => {
-      // Direct pass mapping checks locally populated Split states
-      if (splitFilter !== 'All' && w.splitType !== splitFilter) return false;
+      if (selectedCategories.length > 0) {
+        const cat = w.category || w.splitType || 'Mixed';
+        if (!selectedCategories.includes(cat)) return false;
+      }
       
       if (timeframeFilter !== 'All Time') {
         const now = new Date();
@@ -28,14 +30,14 @@ export const Dashboard: React.FC<any> = ({ workouts }) => {
       
       return true;
     });
-  }, [workouts, splitFilter, timeframeFilter]);
+  }, [workouts, selectedCategories, timeframeFilter]);
 
   return (
     <div style={{ padding: '0 32px', animation: 'fadeIn 0.5s ease-out' }}>
       
       <FilterBar 
-        splitFilter={splitFilter} 
-        setSplitFilter={setSplitFilter}
+        selectedCategories={selectedCategories} 
+        setSelectedCategories={setSelectedCategories}
         timeframeFilter={timeframeFilter}
         setTimeframeFilter={setTimeframeFilter}
       />

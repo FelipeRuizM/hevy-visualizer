@@ -1,17 +1,53 @@
 import React, { useMemo, useState } from 'react';
 import { Card } from '../components/common/Card';
 import { useSettings } from '../context/SettingsContext';
-import type { SplitType } from '../utils/workoutInference';
 import { format } from 'date-fns';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ref, update } from 'firebase/database';
+import { realtimeDb } from '../config/firebase';
 
-const WorkoutCard = ({ session, unit, updateSplit }: any) => {
+const WorkoutCard = ({ session, unit }: any) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showSavedToast, setShowSavedToast] = useState(false);
   const multiplier = unit === 'lbs' ? 2.20462 : 1;
-  const sessionId = session.startTime.getTime().toString();
+
+  const handleCategoryChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newCategory = e.target.value;
+    if (!session.id) return;
+
+    try {
+      // Direct Realtime Database Path Update
+      const workoutRef = ref(realtimeDb, `/${session.id}`);
+      await update(workoutRef, { category: newCategory });
+      
+      setShowSavedToast(true);
+      setTimeout(() => setShowSavedToast(false), 2000);
+    } catch (err) {
+      console.error('Error updating category in RTDB:', err);
+    }
+  };
 
   return (
-    <Card style={{ cursor: 'pointer', transition: 'all 0.3s ease' }} >
+    <Card style={{ position: 'relative', cursor: 'pointer', transition: 'all 0.3s ease' }}>
+      <div style={{
+        position: 'absolute',
+        top: '16px',
+        right: '16px',
+        background: 'rgba(46, 204, 113, 0.1)',
+        color: '#2ecc71',
+        padding: '4px 8px',
+        borderRadius: '6px',
+        fontSize: '12px',
+        fontWeight: 'bold',
+        fontFamily: 'Inter',
+        opacity: showSavedToast ? 1 : 0,
+        pointerEvents: 'none',
+        transition: 'opacity 0.3s ease',
+        zIndex: 10
+      }}>
+        ✓ Saved
+      </div>
+      
       <div 
         onClick={() => setIsOpen(!isOpen)}
         style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
@@ -28,10 +64,10 @@ const WorkoutCard = ({ session, unit, updateSplit }: any) => {
             </span>
           </div>
           
-          <div onClick={e => e.stopPropagation()}>
+          <div onClick={e => e.stopPropagation()} style={{ marginRight: '80px' }}>
             <select 
-              value={session.splitType} 
-              onChange={(e) => updateSplit(sessionId, e.target.value as SplitType)}
+              value={session.category || 'Mixed'} 
+              onChange={handleCategoryChange}
               style={{
                 background: 'rgba(255, 255, 255, 0.05)',
                 color: 'var(--accent-pink-main)',
@@ -95,16 +131,17 @@ const WorkoutCard = ({ session, unit, updateSplit }: any) => {
   );
 };
 
-export const Workouts: React.FC<any> = ({ workouts, updateSplit }) => {
+export const Workouts: React.FC<any> = ({ workouts }) => {
   const sessions = useMemo(() => {
-    const map = new Map<string, { startTime: Date, title: string, splitType: SplitType, volume: number, durSeconds: number, exercises: Map<string, any[]> }>();
+    const map = new Map<string, { id: string, startTime: Date, title: string, category: string, volume: number, durSeconds: number, exercises: Map<string, any[]> }>();
     
     workouts.forEach((w: any) => {
       const sessionId = w.startTime.getTime().toString();
       const s = map.get(sessionId) || { 
+        id: w.id,
         startTime: w.startTime, 
         title: w.title, 
-        splitType: w.splitType,
+        category: w.category || 'Mixed',
         volume: 0, 
         durSeconds: 0, 
         exercises: new Map<string, any[]>() 
@@ -140,7 +177,6 @@ export const Workouts: React.FC<any> = ({ workouts, updateSplit }) => {
               key={session.startTime.getTime().toString()} 
               session={session} 
               unit={unit} 
-              updateSplit={updateSplit} 
            />
         ))}
         {sessions.length === 0 && (

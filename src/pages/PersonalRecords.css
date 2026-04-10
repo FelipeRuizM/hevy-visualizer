@@ -1,0 +1,156 @@
+.pr-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease-out;
+  padding-bottom: 64px;
+}
+
+.pr-header {
+  font-family: 'Outfit';
+  font-size: 28px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.champions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.champion-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.champion-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Gold / Silver / Bronze tints */
+.champion-card.gold {
+  border-color: rgba(255, 215, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 215, 0, 0.08);
+}
+.champion-card.gold:hover {
+  box-shadow: 0 12px 40px rgba(255, 215, 0, 0.2), 0 0 30px rgba(255, 215, 0, 0.12);
+}
+
+.champion-card.silver {
+  border-color: rgba(192, 192, 210, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 0 20px rgba(192, 192, 210, 0.08);
+}
+.champion-card.silver:hover {
+  box-shadow: 0 12px 40px rgba(192, 192, 210, 0.2), 0 0 30px rgba(192, 192, 210, 0.12);
+}
+
+.champion-card.bronze {
+  border-color: rgba(205, 127, 50, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 0 20px rgba(205, 127, 50, 0.08);
+}
+.champion-card.bronze:hover {
+  box-shadow: 0 12px 40px rgba(205, 127, 50, 0.2), 0 0 30px rgba(205, 127, 50, 0.12);
+}
+
+.champion-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  opacity: 0.9;
+  animation: shimmer 2.5s infinite linear;
+  background-size: 200% auto;
+}
+
+.gold .champion-glow {
+  background: linear-gradient(90deg, transparent, #FFD700, #FFA500, #FFD700, transparent);
+  background-size: 200% auto;
+}
+.silver .champion-glow {
+  background: linear-gradient(90deg, transparent, #C0C0D2, #E8E8F0, #C0C0D2, transparent);
+  background-size: 200% auto;
+}
+.bronze .champion-glow {
+  background: linear-gradient(90deg, transparent, #CD7F32, #E8A84C, #CD7F32, transparent);
+  background-size: 200% auto;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.hall-of-fame-title {
+  font-family: 'Outfit';
+  font-size: 22px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+}
+
+.hof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.hof-card {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  transition: all 0.2s ease;
+}
+
+.hof-card:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.pr-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  font-family: 'Inter';
+}
+
+.pr-value {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--accent-pink-main);
+}
+
+.pr-vol-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.pr-date {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.days-counter {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(255,255,255,0.05);
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

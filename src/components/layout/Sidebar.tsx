@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Activity, BarChart3, Settings as SettingsIcon } from 'lucide-react';
+import { LayoutDashboard, Activity, BarChart3, Settings as SettingsIcon, Trophy } from 'lucide-react';
 import './Sidebar.css';
 
 export const Sidebar: React.FC = () => {
@@ -17,6 +17,10 @@ export const Sidebar: React.FC = () => {
         <NavLink to="/workouts" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
           <Activity size={20} />
           <span>Workouts</span>
+        </NavLink>
+        <NavLink to="/records" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
+          <Trophy size={20} />
+          <span>Trophy Room</span>
         </NavLink>
         <NavLink to="/analytics" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
           <BarChart3 size={20} />
