@@ -12,18 +12,9 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  overflow: hidden;
 }
 
 .dashboard-content {
   flex: 1;
-  overflow-y: auto;
   border-radius: 16px;
-  /* Hide scrollbar for a cleaner look */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-.dashboard-content::-webkit-scrollbar {
-  display: none;
 }

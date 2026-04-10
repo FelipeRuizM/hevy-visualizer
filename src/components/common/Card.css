@@ -11,6 +11,8 @@
   transition: all var(--transition-normal);
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 
 .card:hover {
@@ -26,4 +28,5 @@
     
   /* Tactile lift */
   transform: translateY(-2px);
+  z-index: 10;
 }

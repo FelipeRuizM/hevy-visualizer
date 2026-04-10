@@ -1,18 +1,25 @@
 import React, { useMemo } from 'react';
 import { Card } from '../common/Card';
+import { useSettings } from '../../context/SettingsContext';
 import type { WorkoutSet } from '../../utils/csvParser';
+import { startOfISOWeek, subWeeks, format } from 'date-fns';
 
 interface Props {
   workouts: WorkoutSet[];
 }
 
 export const OverviewMetrics: React.FC<Props> = ({ workouts }) => {
+  const { unit } = useSettings();
+
   const metrics = useMemo(() => {
-    if (workouts.length === 0) return { avgVol: 0, avgDur: 0, avgSets: 0 };
+    if (workouts.length === 0) return { avgVol: 0, avgDur: 0, avgSets: 0, maxBench: 0, streak: 0 };
     
-    // Group by unique session. Using startTime works beautifully.
     const sessions = new Map<string, { vol: number, dur: number, sets: number }>();
+    let maxBench = 0;
     
+    const weeksSet = new Set<string>();
+    const timestamps: number[] = [];
+
     workouts.forEach(w => {
       const sessionId = w.startTime.getTime().toString();
       const existing = sessions.get(sessionId) || { vol: 0, dur: 0, sets: 0 };
@@ -26,9 +33,17 @@ export const OverviewMetrics: React.FC<Props> = ({ workouts }) => {
       
       sessions.set(sessionId, {
         vol: existing.vol + setVol,
-        dur: dur > existing.dur ? dur : existing.dur, // Record highest duration
+        dur: dur > existing.dur ? dur : existing.dur, // Using max session duration detected
         sets: existing.sets + 1
       });
+
+      // Best bench tracking (independent of individual rep ranges, simply looking for the max single lift weight correctly logged)
+      if (w.exerciseTitle.toLowerCase().includes('bench press')) {
+        if (w.weightKg > maxBench) maxBench = w.weightKg;
+      }
+
+      weeksSet.add(format(startOfISOWeek(w.startTime), 'yyyy-MM-dd'));
+      timestamps.push(w.startTime.getTime());
     });
 
     let totalVol = 0;
@@ -42,13 +57,28 @@ export const OverviewMetrics: React.FC<Props> = ({ workouts }) => {
     });
 
     const sessionCount = sessions.size;
+
+    // ISO Consistent Weekly Streak Algorithm
+    let streak = 0;
+    const sortedDates = timestamps.sort((a, b) => b - a);
+    let latestWeekStart = startOfISOWeek(new Date(sortedDates[0]));
+    
+    while (weeksSet.has(format(latestWeekStart, 'yyyy-MM-dd'))) {
+      streak++;
+      latestWeekStart = subWeeks(latestWeekStart, 1);
+    }
     
     return {
       avgVol: sessionCount ? Math.round(totalVol / sessionCount) : 0,
-      avgDur: sessionCount ? Math.round(totalDur / sessionCount / 60) : 0, // in minutes
-      avgSets: sessionCount ? Math.round(totalSets / sessionCount) : 0
+      avgDur: sessionCount ? Math.round(totalDur / sessionCount / 60) : 0,
+      avgSets: sessionCount ? Math.round(totalSets / sessionCount) : 0,
+      maxBench,
+      streak
     };
   }, [workouts]);
+
+  const displayAvgVol = unit === 'lbs' ? Math.round(metrics.avgVol * 2.20462) : metrics.avgVol;
+  const displayBench = unit === 'lbs' ? Math.round(metrics.maxBench * 2.20462) : metrics.maxBench;
 
   const valueStyle = {
     fontFamily: 'Inter, sans-serif', 
@@ -75,11 +105,11 @@ export const OverviewMetrics: React.FC<Props> = ({ workouts }) => {
   };
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '24px' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px', marginBottom: '24px' }}>
       <Card>
         <div style={labelStyle}>Avg Volume / Session</div>
         <div style={valueStyle}>
-          {metrics.avgVol.toLocaleString()} <span style={unitStyle}>kg</span>
+          {displayAvgVol.toLocaleString()} <span style={unitStyle}>{unit}</span>
         </div>
       </Card>
 
@@ -91,9 +121,16 @@ export const OverviewMetrics: React.FC<Props> = ({ workouts }) => {
       </Card>
 
       <Card>
-        <div style={labelStyle}>Avg Sets / Session</div>
+        <div style={labelStyle}>Best Bench Press</div>
         <div style={valueStyle}>
-          {metrics.avgSets} <span style={unitStyle}>sets</span>
+          {displayBench} <span style={unitStyle}>{unit}</span>
+        </div>
+      </Card>
+
+      <Card>
+        <div style={labelStyle}>Weekly Streak</div>
+        <div style={valueStyle}>
+          <span style={{ fontSize: '32px' }}>🔥</span> {metrics.streak} <span style={unitStyle}>wks</span>
         </div>
       </Card>
     </div>

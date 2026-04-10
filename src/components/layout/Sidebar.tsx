@@ -1,5 +1,6 @@
 import React from 'react';
-import { LayoutDashboard, Activity, BarChart3, Settings } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
+import { LayoutDashboard, Activity, BarChart3, Settings as SettingsIcon } from 'lucide-react';
 import './Sidebar.css';
 
 export const Sidebar: React.FC = () => {
@@ -9,24 +10,24 @@ export const Sidebar: React.FC = () => {
         <h2>Hevy</h2>
       </div>
       <nav className="sidebar-nav">
-        <a href="#" className="nav-item active">
+        <NavLink to="/" end className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
           <LayoutDashboard size={20} />
           <span>Dashboard</span>
-        </a>
-        <a href="#" className="nav-item">
+        </NavLink>
+        <NavLink to="/workouts" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
           <Activity size={20} />
           <span>Workouts</span>
-        </a>
-        <a href="#" className="nav-item">
+        </NavLink>
+        <NavLink to="/analytics" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
           <BarChart3 size={20} />
           <span>Analytics</span>
-        </a>
+        </NavLink>
       </nav>
       <div className="sidebar-footer">
-        <a href="#" className="nav-item">
-          <Settings size={20} />
+        <NavLink to="/settings" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
+          <SettingsIcon size={20} />
           <span>Settings</span>
-        </a>
+        </NavLink>
       </div>
     </aside>
   );

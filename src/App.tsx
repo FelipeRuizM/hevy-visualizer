@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { DashboardLayout } from './components/layout/DashboardLayout';
+import { Dashboard } from './pages/Dashboard';
+import { Settings } from './pages/Settings';
 import { fetchAndParseWorkouts, type WorkoutSet } from './utils/csvParser';
 import './App.css';
 
@@ -22,7 +25,12 @@ function App() {
   }, []);
 
   return (
-    <DashboardLayout workouts={workouts} />
+    <Routes>
+      <Route path="/" element={<DashboardLayout />}>
+        <Route index element={<Dashboard workouts={workouts} />} />
+        <Route path="settings" element={<Settings />} />
+      </Route>
+    </Routes>
   );
 }
 
