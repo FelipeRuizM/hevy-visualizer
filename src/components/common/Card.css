@@ -1,0 +1,29 @@
+.card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 24px; /* iOS-style continuous rounding effect */
+  padding: 24px;
+  color: var(--text-primary);
+  /* The normal transition handles both lifting and the border color */
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  /* Dynamic border utilizing main active pink */
+  border-color: var(--accent-pink-main);
+  
+  /* Multi-layered glow using Hex Alpha support on modern browsers 
+     66 = ~40% opacity, 33 = ~20% opacity over the base solid #FF2E93 */
+  box-shadow: 
+    var(--glass-shadow),
+    0 0 15px #FF2E9366, 
+    0 0 30px #FF2E9333;
+    
+  /* Tactile lift */
+  transform: translateY(-2px);
+}
