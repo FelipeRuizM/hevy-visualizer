@@ -32,7 +32,6 @@ export const MUSCLE_MAP: Record<string, string> = {
   'Row': 'Back',
   'Back Extension': 'Back',
   'Pull Over': 'Back',
-  'Face Pull': 'Back',
   'Shrug': 'Back',
   'Rack Pull': 'Back',
   'Muscle Up': 'Back',

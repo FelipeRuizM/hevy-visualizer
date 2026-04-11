@@ -85,7 +85,7 @@ export const FrequencyChart: React.FC<Props> = ({ workouts }) => {
               }}
               itemStyle={{ color: CYAN, fontWeight: 'bold' }}
               labelStyle={{ color: 'var(--text-secondary)', marginBottom: '4px' }}
-              formatter={(value: unknown) => [value, 'Workouts']}
+              formatter={(value: unknown) => [String(value), 'Workouts']}
             />
             <Line
               type="monotone"
