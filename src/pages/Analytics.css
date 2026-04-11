@@ -1,0 +1,187 @@
+/* ══════════════════════════════════════════════════════════════════
+   Analytics Page — Premium Glassmorphism Theme
+   ══════════════════════════════════════════════════════════════════ */
+
+.analytics-page {
+  padding: 0 32px 40px;
+}
+
+/* ── Header ────────────────────────────────────────────────────── */
+
+.analytics-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.analytics-title {
+  margin: 0;
+  letter-spacing: -0.02em;
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ── Time Range Selector ───────────────────────────────────────── */
+
+.analytics-time-selector {
+  display: flex;
+  gap: 4px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.time-range-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  letter-spacing: 0.03em;
+}
+
+.time-range-btn:hover {
+  color: var(--text-primary);
+  background: var(--glass-hover-bg);
+}
+
+.time-range-btn.active {
+  background: var(--accent-gradient);
+  color: #fff;
+  box-shadow: 0 0 14px rgba(255, 46, 147, 0.4);
+}
+
+/* ── Key Metrics Row ───────────────────────────────────────────── */
+
+.analytics-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.analytics-metric-card {
+  padding: 22px 24px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all var(--transition-normal);
+}
+
+.analytics-metric-card:hover {
+  border-color: rgba(255, 46, 147, 0.35);
+  box-shadow:
+    var(--glass-shadow),
+    0 0 20px rgba(255, 46, 147, 0.12);
+  transform: translateY(-2px);
+}
+
+.metric-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: 'Outfit', sans-serif;
+}
+
+.metric-value {
+  font-size: 38px;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+}
+
+.metric-unit {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  -webkit-text-fill-color: var(--text-muted); /* override gradient clip */
+}
+
+/* ── Charts Grid ───────────────────────────────────────────────── */
+
+.analytics-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* TopExercisesChart spans full width */
+.analytics-charts-full {
+  grid-column: 1 / -1;
+}
+
+/* ── Mobile ────────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .analytics-metrics-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .analytics-page {
+    padding: 0 16px 32px;
+  }
+
+  .analytics-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .analytics-time-selector {
+    width: 100%;
+  }
+
+  .time-range-btn {
+    flex: 1;
+    text-align: center;
+    padding: 6px 8px;
+  }
+
+  .analytics-metrics-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .analytics-charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-charts-full {
+    grid-column: 1;
+  }
+
+  .metric-value {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .analytics-metrics-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .analytics-metrics-row > :last-child {
+    grid-column: 1 / -1;
+  }
+}

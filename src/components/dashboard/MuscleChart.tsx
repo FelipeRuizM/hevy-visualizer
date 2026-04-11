@@ -1,43 +1,12 @@
 import React, { useMemo } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 import { Card } from '../common/Card';
+import { getMuscleGroup } from '../../utils/workoutUtils';
 import type { WorkoutSet } from '../../utils/csvParser';
 
 interface Props {
   workouts: WorkoutSet[];
 }
-
-const MUSCLE_MAP: Record<string, string> = {
-  'Bench Press': 'Chest',
-  'Chest Fly': 'Chest',
-  'Pec Deck': 'Chest',
-  'Cable Fly Crossovers': 'Chest',
-  
-  'Pulldown': 'Back',
-  'Pull Up': 'Back',
-  'Chin Up': 'Back',
-  'Row': 'Back',
-  'Back Extension': 'Back',
-  
-  'Squat': 'Legs',
-  'Leg Press': 'Legs',
-  'Leg Extension': 'Legs',
-  'Leg Curl': 'Legs',
-  'Hip Thrust': 'Legs',
-  'Adduction': 'Legs',
-  'Abduction': 'Legs',
-  'Calf': 'Legs',
-  'Romanian Deadlift': 'Legs',
-  
-  'Shoulder Press': 'Shoulders',
-  'Lateral Raise': 'Shoulders',
-  'Reverse Fly': 'Shoulders',
-  
-  'Bicep Curl': 'Arms',
-  'Preacher Curl': 'Arms',
-  'Triceps': 'Arms',
-  'Wrist Curl': 'Arms'
-};
 
 const COLORS = [
   '#FF2E93', // Primary pink
@@ -53,14 +22,7 @@ export const MuscleChart: React.FC<Props> = ({ workouts }) => {
     const groups = new Map<string, number>();
     
     workouts.forEach(w => {
-      let group = 'Other';
-      for (const [key, val] of Object.entries(MUSCLE_MAP)) {
-        if (w.exerciseTitle.toLowerCase().includes(key.toLowerCase())) {
-          group = val;
-          break;
-        }
-      }
-      
+      const group = getMuscleGroup(w.exerciseTitle);
       const current = groups.get(group) || 0;
       groups.set(group, current + 1); // We count by SETS dedicated to this muscle group
     });

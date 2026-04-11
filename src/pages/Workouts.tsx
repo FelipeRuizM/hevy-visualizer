@@ -87,11 +87,13 @@ const WorkoutCard = ({ session, unit }: any) => {
     const newCategory = e.target.value;
     if (!session.id) return;
     try {
+      console.log(`[DB] Updating category for workout ${session.id} → "${newCategory}"`);
       await update(ref(realtimeDb, `/${session.id}`), { category: newCategory });
+      console.log(`[DB] Category updated successfully for workout ${session.id}`);
       setShowSavedToast(true);
       setTimeout(() => setShowSavedToast(false), 2000);
     } catch (err) {
-      console.error('Error updating category:', err);
+      console.error('[DB] Error updating category:', err);
     }
   };
 
@@ -325,7 +327,11 @@ export const Workouts: React.FC<any> = ({ workouts }) => {
     };
 
     try {
-      await push(ref(realtimeDb, '/'), payload);
+      const exerciseCount = logExercises.length;
+      const setCount = logExercises.reduce((n, ex) => n + ex.sets.length, 0);
+      console.log(`[DB] Pushing new workout "${logTitle}" (${exerciseCount} exercises, ${setCount} sets)`);
+      const newRef = await push(ref(realtimeDb, '/'), payload);
+      console.log(`[DB] Workout saved successfully with key: ${newRef.key}`);
       setLogTitle('Workout');
       setLogDuration(60);
       setLogCategory('Mixed');

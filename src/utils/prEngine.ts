@@ -13,7 +13,7 @@ export interface PRData {
 }
 
 const BODYWEIGHT_EXERCISES = ['Pull Up', 'Chin Up', 'Dip', 'Push Up', 'Muscle Up'];
-const REP_BASED_EXERCISES = ['Pull Up'];
+const REP_BASED_EXERCISES = ['Pull Up', 'Chin Up', 'Dip', 'Push Up', 'Muscle Up'];
 
 export const calculatePRs = (workouts: TaggedWorkout[]): PRData[] => {
   const prMap = new Map<string, PRData>();

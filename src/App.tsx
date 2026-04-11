@@ -4,6 +4,7 @@ import { Dashboard } from './pages/Dashboard';
 import { Settings } from './pages/Settings';
 import { Workouts } from './pages/Workouts';
 import { PersonalRecords } from './pages/PersonalRecords';
+import { Analytics } from './pages/Analytics';
 import { useWorkouts } from './hooks/useWorkouts';
 import './App.css';
 
@@ -27,6 +28,7 @@ function App() {
         <Route index element={<Dashboard workouts={workouts} />} />
         <Route path="workouts" element={<Workouts workouts={workouts} />} />
         <Route path="records" element={<PersonalRecords workouts={workouts} />} />
+        <Route path="analytics" element={<Analytics workouts={workouts} />} />
         <Route path="settings" element={<Settings />} />
       </Route>
     </Routes>

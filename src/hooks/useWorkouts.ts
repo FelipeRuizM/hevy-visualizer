@@ -68,14 +68,19 @@ export const useWorkouts = () => {
     };
 
     const workoutsRef = ref(realtimeDb, '/');
+    console.log('[DB] Subscribing to Realtime Database (/)');
     const unsubscribe = onValue(workoutsRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
-        setWorkouts(parseDataToFlat(data));
+        const flat = parseDataToFlat(data);
+        console.log(`[DB] Fetched ${flat.length} sets across ${new Set(flat.map(w => w.id)).size} workouts`);
+        setWorkouts(flat);
+      } else {
+        console.log('[DB] Fetch returned empty snapshot');
       }
       setLoading(false);
     }, (error) => {
-      console.error("Realtime Database listen failed:", error);
+      console.error('[DB] Realtime Database listen failed:', error);
       setLoading(false);
     });
 
