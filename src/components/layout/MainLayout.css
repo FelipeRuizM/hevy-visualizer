@@ -26,6 +26,44 @@
   min-width: 0;
 }
 
+/* ── Mobile Header ── */
+.mobile-header {
+  display: none;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+}
+
+.mobile-menu-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.mobile-logo {
+  font-size: 24px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* ── Mobile ── */
 @media (max-width: 768px) {
   .dashboard-layout {
@@ -34,13 +72,20 @@
     gap: 12px;
   }
 
-  /* Sidebar is hidden via its own CSS; this ensures the grid collapses */
   .dashboard-layout.sidebar-collapsed {
     grid-template-columns: 1fr;
   }
 
+  .mobile-header {
+    display: flex;
+  }
+
+  /* Hide the desktop TopNavigation on mobile */
+  .dashboard-main > .top-nav {
+    display: none;
+  }
+
   .dashboard-content {
-    /* Clears the fixed BottomNav (64px) + iPhone safe area */
-    padding-bottom: calc(64px + env(safe-area-inset-bottom, 16px) + 16px);
+    padding-bottom: 16px;
   }
 }

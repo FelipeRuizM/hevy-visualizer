@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Trophy, Flame } from 'lucide-react';
-import { calculatePRs, type PRData } from '../utils/prEngine';
+import { calculatePRs, REP_BASED_EXERCISES, type PRData } from '../utils/prEngine';
 import { useSettings } from '../context/SettingsContext';
 import { format } from 'date-fns';
 import './PersonalRecords.css';
@@ -12,23 +12,27 @@ export const PersonalRecords: React.FC<any> = ({ workouts }) => {
   const prs = useMemo(() => calculatePRs(workouts), [workouts]);
 
   const championsList = ['Bench Press', 'Squat', 'Pull Up'];
-  
-  const champions = championsList.map(title => 
-    prs.find(pr => pr.exerciseTitle.toLowerCase().includes(title.toLowerCase())) || 
-    { exerciseTitle: title, maxWeight: 0, maxVolume: 0, maxWeightDate: new Date(), maxVolumeDate: new Date(), daysSinceLastPR: 0 } as PRData
+
+  const champions = championsList.map(title =>
+    prs.find(pr => pr.exerciseTitle.toLowerCase().includes(title.toLowerCase())) ||
+    { exerciseTitle: title, maxWeight: 0, maxReps: 0, maxVolume: 0, maxWeightDate: new Date(), maxRepsDate: new Date(), maxVolumeDate: new Date(), daysSinceLastPR: 0 } as PRData
   );
 
   const hof = prs.filter(pr => !championsList.some(title => pr.exerciseTitle.toLowerCase().includes(title.toLowerCase())));
 
   const tierClass = ['gold', 'silver', 'bronze'];
 
+  const isRepBased = (exerciseTitle: string) =>
+    REP_BASED_EXERCISES.some(name => exerciseTitle.toLowerCase().includes(name.toLowerCase()));
+
   const renderCard = (pr: PRData, isChampion: boolean, championIndex?: number) => {
     const displayWeight = Math.round(pr.maxWeight * multiplier);
     const displayVol = Math.round(pr.maxVolume * multiplier);
+    const repBased = isRepBased(pr.exerciseTitle);
 
-    // Pull Up Breakdown Logic
+    // Pull Up Breakdown Logic (only relevant for non-rep-based display path)
     let bodyweightAnnotation = null;
-    if (pr.exerciseTitle.toLowerCase().includes('pull up') && pr.bodyweightAtPR) {
+    if (!repBased && pr.exerciseTitle.toLowerCase().includes('pull up') && pr.bodyweightAtPR) {
       const bwDis = Math.round(pr.bodyweightAtPR * multiplier);
       const addedDis = displayWeight - bwDis;
       bodyweightAnnotation = (
@@ -42,20 +46,34 @@ export const PersonalRecords: React.FC<any> = ({ workouts }) => {
       ? `champion-card ${tierClass[championIndex ?? 0]}`
       : 'hof-card';
 
+    const hasRecord = repBased ? pr.maxReps > 0 : displayWeight > 0;
+
     return (
       <div key={pr.exerciseTitle} className={cardClass}>
         {isChampion && <div className="champion-glow" />}
         <h3 style={{ fontSize: isChampion ? '24px' : '18px', margin: '0 0 16px 0', fontFamily: 'Outfit' }}>
           {pr.exerciseTitle}
         </h3>
-        
+
         <div className="pr-stat">
           <div>
-            <div style={{ fontSize: '12px', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Max Weight</div>
-            <div className="pr-value">{displayWeight > 0 ? `${displayWeight} ${unit}` : '-'}</div>
+            <div style={{ fontSize: '12px', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              {repBased ? 'Max Reps PR' : 'Max Weight'}
+            </div>
+            <div className="pr-value">
+              {repBased
+                ? (pr.maxReps > 0 ? `${pr.maxReps} Reps` : '-')
+                : (displayWeight > 0 ? `${displayWeight} ${unit}` : '-')
+              }
+            </div>
             {bodyweightAnnotation}
           </div>
-          <div className="pr-date">{displayWeight > 0 ? format(pr.maxWeightDate, 'MMM d, yyyy') : ''}</div>
+          <div className="pr-date">
+            {repBased
+              ? (pr.maxReps > 0 ? format(pr.maxRepsDate, 'MMM d, yyyy') : '')
+              : (displayWeight > 0 ? format(pr.maxWeightDate, 'MMM d, yyyy') : '')
+            }
+          </div>
         </div>
 
         <div className="pr-stat" style={{ marginTop: '16px' }}>
@@ -71,7 +89,7 @@ export const PersonalRecords: React.FC<any> = ({ workouts }) => {
             <Flame size={16} color={pr.daysSinceLastPR < 7 ? 'var(--accent-pink-main)' : 'var(--text-muted)'} />
             Days since PR
           </span>
-          <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{displayWeight > 0 ? pr.daysSinceLastPR : '-'}</span>
+          <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{hasRecord ? pr.daysSinceLastPR : '-'}</span>
         </div>
       </div>
     );

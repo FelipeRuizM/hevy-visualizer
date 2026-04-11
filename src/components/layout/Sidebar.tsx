@@ -6,9 +6,11 @@ import './Sidebar.css';
 interface SidebarProps {
   isCollapsed: boolean;
   onToggle: () => void;
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, onToggle }) => {
+export const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, onToggle, isOpen = false, onClose }) => {
   const navItems = [
     { to: '/', icon: LayoutDashboard, label: 'Dashboard', end: true },
     { to: '/workouts', icon: Activity, label: 'Workouts' },
@@ -17,40 +19,49 @@ export const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, onToggle }) => {
   ];
 
   return (
-    <aside className={`sidebar glass-panel ${isCollapsed ? 'collapsed' : ''}`}>
-      <div className="sidebar-logo">
-        {isCollapsed
-          ? <span className="sidebar-logo-icon">H</span>
-          : <h2>Hevy</h2>
-        }
-      </div>
+    <>
+      <div className={`sidebar-overlay ${isOpen ? 'visible' : ''}`} onClick={onClose} />
+      <aside className={`sidebar glass-panel ${isCollapsed ? 'collapsed' : ''} ${isOpen ? 'mobile-open' : ''}`}>
+        <div className="sidebar-logo">
+          {isCollapsed
+            ? <span className="sidebar-logo-icon">H</span>
+            : <h2>Hevy</h2>
+          }
+        </div>
 
-      <nav className="sidebar-nav">
-        {navItems.map(({ to, icon: Icon, label, end }) => (
+        <nav className="sidebar-nav">
+          {navItems.map(({ to, icon: Icon, label, end }) => (
+            <NavLink
+              key={to}
+              to={to}
+              end={end}
+              className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
+              title={isCollapsed ? label : undefined}
+              onClick={onClose}
+            >
+              <Icon size={20} />
+              {!isCollapsed && <span>{label}</span>}
+            </NavLink>
+          ))}
+        </nav>
+
+        <div className="sidebar-footer">
           <NavLink
-            key={to}
-            to={to}
-            end={end}
+            to="/settings"
             className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
-            title={isCollapsed ? label : undefined}
+            title={isCollapsed ? 'Settings' : undefined}
+            onClick={onClose}
           >
-            <Icon size={20} />
-            {!isCollapsed && <span>{label}</span>}
+            <SettingsIcon size={20} />
+            {!isCollapsed && <span>Settings</span>}
           </NavLink>
-        ))}
-      </nav>
 
-      <div className="sidebar-footer">
-        <NavLink to="/settings" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title={isCollapsed ? 'Settings' : undefined}>
-          <SettingsIcon size={20} />
-          {!isCollapsed && <span>Settings</span>}
-        </NavLink>
-
-        <button className="collapse-toggle" onClick={onToggle} title={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}>
-          {isCollapsed ? <ChevronsRight size={16} /> : <ChevronsLeft size={16} />}
-          {!isCollapsed && <span>Collapse</span>}
-        </button>
-      </div>
-    </aside>
+          <button className="collapse-toggle" onClick={onToggle} title={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}>
+            {isCollapsed ? <ChevronsRight size={16} /> : <ChevronsLeft size={16} />}
+            {!isCollapsed && <span>Collapse</span>}
+          </button>
+        </div>
+      </aside>
+    </>
   );
 };
