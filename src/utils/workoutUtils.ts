@@ -1,6 +1,39 @@
 import { startOfWeek, format } from 'date-fns';
 import type { WorkoutSet } from './csvParser';
 
+// ─── Filter Types ─────────────────────────────────────────────────────────────
+
+export type MetricType = 'volume' | 'reps' | 'sets' | 'duration';
+
+export interface ChartFilters {
+  categories: string[];    // e.g. ['Push','Pull'] — empty = all
+  muscleGroup: string;     // e.g. 'Chest' — '' = all
+  exercise: string;        // exact exerciseTitle — '' = all
+}
+
+export const EMPTY_FILTERS: ChartFilters = { categories: [], muscleGroup: '', exercise: '' };
+
+/** Apply category / muscle / exercise filters to a flat set list. */
+export function applyChartFilters(
+  workouts: (WorkoutSet & { id: string; category?: string })[],
+  filters: ChartFilters,
+): (WorkoutSet & { id: string; category?: string })[] {
+  return workouts.filter(w => {
+    if (filters.categories.length > 0) {
+      if (!filters.categories.includes(w.category ?? 'Mixed')) return false;
+    }
+    if (filters.exercise) {
+      if (w.exerciseTitle !== filters.exercise) return false;
+    } else if (filters.muscleGroup) {
+      if (getMuscleGroup(w.exerciseTitle) !== filters.muscleGroup) return false;
+    }
+    return true;
+  });
+}
+
+/** All distinct muscle groups (sorted) for use in dropdowns. */
+export const MUSCLE_GROUPS = ['Arms', 'Back', 'Chest', 'Core', 'Legs', 'Other', 'Shoulders'] as const;
+
 // ─── Centralized Muscle Group Mapping ───────────────────────────────────────
 // Matching is done via partial, case-insensitive includes() on exerciseTitle.
 // Order matters: more specific entries should come before general ones.
@@ -227,4 +260,69 @@ export function getVolumeByMuscleGroup(workouts: WorkoutSet[]): MuscleGroupPoint
   return Array.from(map.values())
     .sort((a, b) => b.volumeKg - a.volumeKg)
     .filter(r => r.sets > 0);
+}
+
+// ─── Dynamic Weekly Metric ────────────────────────────────────────────────────
+
+export interface WeeklyMetricPoint {
+  weekKey: string;
+  label: string;
+  value: number;
+}
+
+/**
+ * Aggregates the dataset by calendar week for any of the four supported metrics.
+ * Duration is summed in minutes (rounded). Volume stays in kg — callers convert.
+ * Sets counts unique workout sessions; Reps sums raw reps.
+ */
+export function getWeeklyMetric(
+  workouts: (WorkoutSet & { id: string })[],
+  metric: MetricType,
+): WeeklyMetricPoint[] {
+  // For 'sets' we need to count per-session unique sets, not raw rows (each row IS one set).
+  // For 'duration' we want total minutes of unique sessions (not per-set duplication).
+  // We track sessions separately to avoid double-counting session duration.
+  const map     = new Map<string, WeeklyMetricPoint>();
+  const sessDur = new Map<string, { weekKey: string; durationSec: number }>();
+
+  workouts.forEach(w => {
+    const wk  = getWeekKey(w.startTime);
+    const lbl = getWeekLabel(w.startTime);
+
+    if (!map.has(wk)) map.set(wk, { weekKey: wk, label: lbl, value: 0 });
+    const pt = map.get(wk)!;
+
+    if (metric === 'volume') {
+      pt.value += w.weightKg * w.reps;
+    } else if (metric === 'reps') {
+      pt.value += w.reps;
+    } else if (metric === 'sets') {
+      pt.value += 1; // each row is one set
+    } else if (metric === 'duration') {
+      // Accumulate per-session duration once (avoid multiplying by set count)
+      if (!sessDur.has(w.id)) {
+        const durSec = w.endTime
+          ? Math.round((w.endTime.getTime() - w.startTime.getTime()) / 1000)
+          : 0;
+        sessDur.set(w.id, { weekKey: wk, durationSec: durSec });
+      }
+    }
+  });
+
+  // Merge session durations into weekly buckets
+  if (metric === 'duration') {
+    sessDur.forEach(({ weekKey, durationSec }) => {
+      if (!map.has(weekKey)) return;
+      map.get(weekKey)!.value += durationSec;
+    });
+    // Convert seconds → minutes
+    map.forEach(pt => { pt.value = Math.round(pt.value / 60); });
+  } else if (metric === 'volume') {
+    // Leave as-is; caller converts kg→lbs if needed
+  } else {
+    // reps / sets are already integers — round to be safe
+    map.forEach(pt => { pt.value = Math.round(pt.value); });
+  }
+
+  return Array.from(map.values()).sort((a, b) => a.weekKey.localeCompare(b.weekKey));
 }

@@ -130,6 +130,596 @@
   grid-column: 1 / -1;
 }
 
+/* ── Header controls row ───────────────────────────────────────── */
+
+.analytics-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ── Advanced filters toggle button ────────────────────────────── */
+
+.adv-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  padding: 6px 14px;
+  color: var(--text-secondary);
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.adv-toggle-btn:hover {
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.adv-toggle-btn--open {
+  border-color: rgba(255, 46, 147, 0.35);
+  color: var(--text-primary);
+}
+
+.adv-toggle-btn--active {
+  border-color: rgba(255, 46, 147, 0.45);
+  background: rgba(255, 46, 147, 0.07);
+  color: var(--text-primary);
+}
+
+.adv-badge {
+  background: var(--accent-pink-main);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 9px;
+  padding: 1px 6px;
+  line-height: 1.6;
+}
+
+.adv-chevron {
+  transition: transform var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.adv-chevron--open {
+  transform: rotate(180deg);
+}
+
+/* ── Advanced filter panel ─────────────────────────────────────── */
+
+.adv-panel {
+  margin-bottom: 24px;
+  border-radius: 20px;
+  animation: fadeIn 0.18s ease-out;
+}
+
+.adv-panel-inner {
+  padding: 20px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.adv-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 160px;
+}
+
+.adv-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Category multi-select pills */
+.adv-cat-pills {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.adv-cat-pill {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 5px 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.adv-cat-pill:hover {
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.adv-cat-pill--active {
+  background: rgba(255, 46, 147, 0.15);
+  border-color: rgba(255, 46, 147, 0.5);
+  color: var(--accent-pink-main);
+}
+
+/* Muscle group native select */
+.adv-select-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.adv-select {
+  appearance: none;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  padding: 7px 32px 7px 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  color: var(--text-primary);
+  cursor: pointer;
+  outline: none;
+  transition: border-color var(--transition-fast);
+  min-width: 150px;
+}
+
+.adv-select:focus {
+  border-color: rgba(255, 46, 147, 0.4);
+}
+
+.adv-select:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.adv-select option {
+  background: var(--bg-dark);
+  color: var(--text-primary);
+}
+
+.adv-select-icon {
+  position: absolute;
+  right: 10px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* Exercise isolation picker */
+.adv-ex-picker {
+  position: relative;
+  min-width: 200px;
+}
+
+.adv-ex-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.adv-input {
+  width: 100%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  padding: 7px 32px 7px 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.adv-input::placeholder {
+  color: var(--text-muted);
+}
+
+.adv-input:focus {
+  border-color: rgba(255, 46, 147, 0.4);
+}
+
+.adv-ex-clear {
+  position: absolute;
+  right: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+}
+
+.adv-ex-clear:hover {
+  background: rgba(255, 46, 147, 0.2);
+  color: var(--accent-pink-main);
+}
+
+.adv-ex-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: rgba(10, 13, 20, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 200;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.adv-ex-option {
+  padding: 9px 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.adv-ex-option:last-child { border-bottom: none; }
+
+.adv-ex-option:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.adv-ex-option--active {
+  color: var(--accent-pink-main);
+  background: rgba(255, 46, 147, 0.08);
+}
+
+/* Clear all button */
+.adv-clear-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: 1px solid rgba(255, 46, 147, 0.3);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-pink-main);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  align-self: flex-end;
+  margin-bottom: 0;
+}
+
+.adv-clear-btn:hover {
+  background: rgba(255, 46, 147, 0.1);
+  border-color: rgba(255, 46, 147, 0.5);
+}
+
+/* ── Dynamic Metric Chart pills ────────────────────────────────── */
+
+.dmc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.dmc-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.dmc-pills {
+  display: flex;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.dmc-pill {
+  background: transparent;
+  border: none;
+  border-radius: 7px;
+  padding: 4px 11px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.dmc-pill:hover {
+  color: var(--text-primary);
+  background: var(--glass-hover-bg);
+}
+
+.dmc-pill--active {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--pill-color, var(--accent-pink-main));
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.06);
+}
+
+.dmc-empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+}
+
+/* ── Calendar + Muscle Split row ───────────────────────────────── */
+
+.analytics-calendar-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+  margin-bottom: 28px;
+}
+
+/* Let the calendar fill its grid column without the standalone max-width cap */
+.analytics-calendar-row .cal-container {
+  max-width: none;
+}
+
+/* Force the MuscleChart Card to match the calendar's natural height */
+.analytics-calendar-row .card {
+  height: 100% !important;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .analytics-calendar-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Workout Calendar ──────────────────────────────────────────── */
+
+/* The glass-panel class provides background / border / blur */
+.cal-container {
+  position: relative;
+  padding: 20px 24px 24px;
+  width: 100%;
+  max-width: 540px;
+  user-select: none;
+  /* override default card border-radius */
+  border-radius: 24px !important;
+}
+
+/* Month nav row */
+.cal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.cal-month-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.cal-nav-btn {
+  background: var(--glass-hover-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+}
+
+.cal-nav-btn:hover {
+  background: rgba(255, 46, 147, 0.1);
+  border-color: rgba(255, 46, 147, 0.3);
+  color: var(--accent-pink-main);
+}
+
+/* 7-column grid */
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+/* Day-of-week header labels */
+.cal-dow {
+  text-align: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+}
+
+/* Blank leading cells */
+.cal-blank {
+  aspect-ratio: 1;
+}
+
+/* Day cells */
+.cal-day {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border-radius: 50%;
+  cursor: default;
+  transition: background var(--transition-fast);
+}
+
+.cal-day-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+/* Today: ring + gradient number */
+.cal-day--today .cal-day-num {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.cal-day--today {
+  box-shadow: inset 0 0 0 1.5px rgba(255, 46, 147, 0.35);
+}
+
+/* Workout day */
+.cal-day--workout {
+  cursor: pointer;
+}
+
+.cal-day--workout .cal-day-num {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.cal-day--workout:hover {
+  background: rgba(255, 46, 147, 0.1);
+}
+
+/* Selected state */
+.cal-day--selected {
+  background: rgba(255, 46, 147, 0.14) !important;
+}
+
+.cal-day--selected .cal-day-num {
+  color: var(--accent-pink-main) !important;
+  -webkit-text-fill-color: var(--accent-pink-main) !important;
+  font-weight: 700;
+}
+
+/* Workout dot indicator */
+.cal-dot {
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent-pink-main);
+  box-shadow: 0 0 5px rgba(255, 46, 147, 0.8);
+  flex-shrink: 0;
+}
+
+/* ── Popover ───────────────────────────────────────────────────── */
+
+.cal-popover {
+  position: absolute;
+  background: rgba(8, 10, 16, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 46, 147, 0.2);
+  border-radius: 14px;
+  padding: 12px 16px;
+  min-width: 150px;
+  max-width: 210px;
+  z-index: 100;
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.55),
+    0 0 16px rgba(255, 46, 147, 0.08);
+  pointer-events: auto;
+}
+
+.cal-popover--above {
+  transform: translateX(-50%) translateY(calc(-100% - 8px));
+  animation: calPopAbove 0.14s ease-out;
+}
+
+.cal-popover--below {
+  transform: translateX(-50%);
+  animation: calPopBelow 0.14s ease-out;
+}
+
+@keyframes calPopAbove {
+  from { opacity: 0; transform: translateX(-50%) translateY(calc(-100% - 2px)) scale(0.94); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(calc(-100% - 8px)) scale(1); }
+}
+
+@keyframes calPopBelow {
+  from { opacity: 0; transform: translateX(-50%) translateY(4px) scale(0.94); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0)   scale(1); }
+}
+
+.cal-popover-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cal-popover-item--divider {
+  margin-top: 9px;
+  padding-top: 9px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.cal-popover-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cal-popover-cat {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
 /* ── Mobile ────────────────────────────────────────────────────── */
 
 @media (max-width: 900px) {
