@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { ref, remove } from 'firebase/database';
 import { format } from 'date-fns';
 import { useNavigate } from 'react-router-dom';
-import { Footprints, Pencil, Trash2, MapPin, HeartPulse, Flame, Users } from 'lucide-react';
+import { Footprints, Pencil, Trash2, MapPin, HeartPulse, Flame, Users, ChevronRight, Route, Clock, Timer, TrendingUp, Mountain, Gauge, Calendar } from 'lucide-react';
 import { realtimeDb } from '../config/firebase';
 import { useAuth } from '../context/AuthContext';
 import { useRuns, type RunType } from '../hooks/useRuns';
@@ -10,6 +10,7 @@ import { Card } from '../components/common/Card';
 import { labelStyle } from '../styles/formStyles';
 import { pageTitleStyle, sectionTitleStyle, statValueStyle } from '../styles/typography';
 import { formatDuration, runDifficulty } from '../utils/runFormat';
+import { sortPeople } from '../utils/people';
 
 const TYPE_COLORS: Record<RunType, string> = {
   Light: '#4ADE80',
@@ -17,6 +18,10 @@ const TYPE_COLORS: Record<RunType, string> = {
   Long: '#60A5FA',
   Other: '#A78BFA',
 };
+
+// Shared styling for an icon + value metric on a run card.
+const metricStyle: React.CSSProperties = { display: 'inline-flex', alignItems: 'center', gap: '5px' };
+const mutedIcon: React.CSSProperties = { color: 'var(--text-muted)' };
 
 export const Running: React.FC = () => {
   const { canWrite, dataUid } = useAuth();
@@ -93,8 +98,11 @@ export const Running: React.FC = () => {
       ) : (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           {runs.map((run) => (
-            <Card key={run.id} style={{ borderLeft: `4px solid ${TYPE_COLORS[run.type]}` }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px' }}>
+            <Card key={run.id} style={{ borderLeft: `4px solid ${TYPE_COLORS[run.type]}`, cursor: 'pointer' }}>
+              <div
+                onClick={() => navigate(`/running/${run.id}`)}
+                style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px' }}
+              >
                 <div style={{ minWidth: 0 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px', flexWrap: 'wrap' }}>
                     <Footprints size={16} style={{ color: TYPE_COLORS[run.type] }} />
@@ -115,39 +123,61 @@ export const Running: React.FC = () => {
                     </span>
                   </div>
                   <div style={{ display: 'flex', gap: '18px', flexWrap: 'wrap', color: 'var(--text-secondary)', fontFamily: 'Inter', fontSize: '14px' }}>
-                    <span>{run.distanceKm.toFixed(2)} km</span>
-                    <span>{formatDuration(run.durationSeconds)}</span>
-                    {run.pace && <span>{run.pace}</span>}
-                    {run.elevationGainM > 0 && <span>↑ {run.elevationGainM} m</span>}
-                    {run.maxElevationM > 0 && <span>⛰ {run.maxElevationM} m</span>}
-                    {run.steps > 0 && <span>{run.steps.toLocaleString()} steps</span>}
+                    <span style={metricStyle}>
+                      <Route size={13} style={mutedIcon} /> {run.distanceKm.toFixed(2)} km
+                    </span>
+                    <span style={metricStyle}>
+                      <Clock size={13} style={mutedIcon} /> {formatDuration(run.durationSeconds)}
+                    </span>
+                    {run.pace && (
+                      <span style={metricStyle}>
+                        <Timer size={13} style={mutedIcon} /> {run.pace}
+                      </span>
+                    )}
+                    {run.elevationGainM > 0 && (
+                      <span style={metricStyle}>
+                        <TrendingUp size={13} style={mutedIcon} /> {run.elevationGainM} m
+                      </span>
+                    )}
+                    {run.maxElevationM > 0 && (
+                      <span style={metricStyle}>
+                        <Mountain size={13} style={mutedIcon} /> {run.maxElevationM} m
+                      </span>
+                    )}
+                    {run.steps > 0 && (
+                      <span style={metricStyle}>
+                        <Footprints size={13} style={mutedIcon} /> {run.steps.toLocaleString()} steps
+                      </span>
+                    )}
                     {run.avgHeartRate > 0 && (
-                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                      <span style={metricStyle}>
                         <HeartPulse size={13} style={{ color: '#FB7185' }} /> {run.avgHeartRate} bpm
                       </span>
                     )}
                     {run.calories > 0 && (
-                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                      <span style={metricStyle}>
                         <Flame size={13} style={{ color: '#F59E0B' }} /> {run.calories.toLocaleString()} kcal
                       </span>
                     )}
                     {run.difficulty > 0 && (
-                      <span style={{ color: runDifficulty(run.difficulty).color, fontWeight: 600 }}>
-                        {runDifficulty(run.difficulty).label} {run.difficulty}/10
+                      <span style={{ ...metricStyle, color: runDifficulty(run.difficulty).color, fontWeight: 600 }}>
+                        <Gauge size={13} /> {runDifficulty(run.difficulty).label} {run.difficulty}/10
                       </span>
                     )}
-                    <span style={{ color: 'var(--text-muted)' }}>{format(run.startTime, 'd MMM, HH:mm')}</span>
+                    <span style={{ ...metricStyle, color: 'var(--text-muted)' }}>
+                      <Calendar size={12} /> {format(run.startTime, 'd MMM, HH:mm')}
+                    </span>
                   </div>
                   {run.location && (
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '8px', color: 'var(--text-secondary)', fontFamily: 'Inter', fontSize: '13px' }}>
-                      <MapPin size={13} />
+                      <MapPin size={13} style={mutedIcon} />
                       <span>{run.location}</span>
                     </div>
                   )}
                   {run.people.length > 0 && (
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '6px', color: 'var(--text-secondary)', fontFamily: 'Inter', fontSize: '13px' }}>
                       <Users size={13} style={{ color: '#60A5FA' }} />
-                      <span>{run.people.join(', ')}</span>
+                      <span>{sortPeople(run.people).join(', ')}</span>
                     </div>
                   )}
                   {run.description && (
@@ -157,24 +187,27 @@ export const Running: React.FC = () => {
                   )}
                 </div>
 
-                {canWrite && (
-                  <div style={{ display: 'flex', gap: '8px', flexShrink: 0 }}>
-                    <button
-                      onClick={() => navigate(`/add/run?edit=${run.id}`)}
-                      aria-label="Edit run"
-                      style={{ background: 'transparent', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', padding: '4px' }}
-                    >
-                      <Pencil size={16} />
-                    </button>
-                    <button
-                      onClick={() => deleteRun(run.id)}
-                      aria-label="Delete run"
-                      style={{ background: 'transparent', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', padding: '4px' }}
-                    >
-                      <Trash2 size={16} />
-                    </button>
-                  </div>
-                )}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }} onClick={(e) => e.stopPropagation()}>
+                  {canWrite && (
+                    <>
+                      <button
+                        onClick={() => navigate(`/add/run?edit=${run.id}`)}
+                        aria-label="Edit run"
+                        style={{ background: 'transparent', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', padding: '4px' }}
+                      >
+                        <Pencil size={16} />
+                      </button>
+                      <button
+                        onClick={() => deleteRun(run.id)}
+                        aria-label="Delete run"
+                        style={{ background: 'transparent', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', padding: '4px' }}
+                      >
+                        <Trash2 size={16} />
+                      </button>
+                    </>
+                  )}
+                  <ChevronRight size={18} style={{ color: 'var(--text-muted)' }} />
+                </div>
               </div>
             </Card>
           ))}

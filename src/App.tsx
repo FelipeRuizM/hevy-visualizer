@@ -12,9 +12,11 @@ const AddWorkout = lazy(() => import('./pages/AddWorkout').then(m => ({ default:
 const AddRun = lazy(() => import('./pages/AddRun').then(m => ({ default: m.AddRun })));
 const PersonalRecords = lazy(() => import('./pages/PersonalRecords').then(m => ({ default: m.PersonalRecords })));
 const ExerciseDetail = lazy(() => import('./pages/ExerciseDetail').then(m => ({ default: m.ExerciseDetail })));
+const WorkoutDetail = lazy(() => import('./pages/WorkoutDetail').then(m => ({ default: m.WorkoutDetail })));
 const Analytics = lazy(() => import('./pages/Analytics').then(m => ({ default: m.Analytics })));
 const MonthlyReports = lazy(() => import('./pages/MonthlyReports').then(m => ({ default: m.MonthlyReports })));
 const Running = lazy(() => import('./pages/Running').then(m => ({ default: m.Running })));
+const RunDetail = lazy(() => import('./pages/RunDetail').then(m => ({ default: m.RunDetail })));
 const Login = lazy(() => import('./pages/Login').then(m => ({ default: m.Login })));
 import { useAuth } from './context/AuthContext';
 import { useExercises } from './context/ExercisesContext';
@@ -60,6 +62,7 @@ function AuthedApp() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Dashboard workouts={workouts} />} />
           <Route path="workouts" element={<Workouts workouts={workouts} />} />
+          <Route path="workouts/:id" element={<WorkoutDetail workouts={workouts} />} />
           <Route path="add/workout" element={<AddWorkout workouts={workouts} />} />
           <Route path="add/run" element={<AddRun />} />
           <Route path="records" element={<PersonalRecords workouts={workouts} />} />
@@ -67,6 +70,7 @@ function AuthedApp() {
           <Route path="analytics" element={<Analytics workouts={workouts} />} />
           <Route path="monthly" element={<MonthlyReports workouts={workouts} />} />
           <Route path="running" element={<Running />} />
+          <Route path="running/:id" element={<RunDetail />} />
           <Route path="settings" element={<Settings />} />
         </Route>
       </Routes>

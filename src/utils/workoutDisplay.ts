@@ -10,7 +10,6 @@ export type SetType = 'normal' | 'warmup' | 'dropset' | 'failure' | 'feeder' | '
 
 export const SET_TYPES: { key: SetType; label: string; name: string; color: string }[] = [
   { key: 'normal',  label: '#',  name: 'Normal',   color: 'var(--text-primary)' },
-  { key: 'working', label: 'Wk', name: 'Working',  color: '#10B981' },
   { key: 'warmup',  label: 'W',  name: 'Warmup',   color: '#F59E0B' },
   { key: 'feeder',  label: 'Fd', name: 'Feeder',   color: '#A855F7' },
   { key: 'dropset', label: 'D',  name: 'Drop Set', color: '#3B82F6' },

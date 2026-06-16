@@ -77,6 +77,10 @@ export const useWorkouts = () => {
             let finalWeight = Number(s.weight_kg) || 0;
             if (isBodyweight) finalWeight += bodyweightAddition;
 
+            // "Working" sets are identical to normal sets — fold legacy data in.
+            const rawType = (s.set_type as WorkoutSet['setType']) || 'normal';
+            const setType = rawType === 'working' ? 'normal' : rawType;
+
             flatData.push({
               id: dbKey, // This is the key we use for updates!
               category: item.category || 'Mixed',
@@ -91,7 +95,7 @@ export const useWorkouts = () => {
               supersetId: '',
               exerciseNotes: ex.exercise_notes || '',
               setIndex: s.set_index || 0,
-              setType: (s.set_type as WorkoutSet['setType']) || 'normal',
+              setType,
               weightKg: finalWeight,
               reps: Number(s.reps) || 0,
               distanceKm: 0,

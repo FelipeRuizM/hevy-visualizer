@@ -1,0 +1,370 @@
+/* ══════════════════════════════════════════════════════════════════
+   Workout Detail Page
+   ══════════════════════════════════════════════════════════════════ */
+
+.wkd-page {
+  padding: 0 32px 48px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ── Back link ─────────────────────────────────────────────────── */
+
+.wkd-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 8px 0 20px;
+  color: var(--text-muted);
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.wkd-back:hover {
+  color: var(--accent-pink-main);
+}
+
+/* ── Header ────────────────────────────────────────────────────── */
+
+.wkd-header {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  padding: 20px 22px;
+  margin-bottom: 24px;
+}
+
+.wkd-title-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.wkd-title {
+  margin: 0;
+  letter-spacing: -0.02em;
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  min-width: 0;
+}
+
+.wkd-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  font-size: 11px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid;
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+.wkd-edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-secondary);
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.wkd-edit:hover {
+  color: var(--text-primary);
+  background: var(--glass-hover-bg);
+}
+
+.wkd-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* ── Summary stats ─────────────────────────────────────────────── */
+
+.wkd-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.wkd-stat {
+  padding: 16px 18px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wkd-stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: 'Outfit', sans-serif;
+}
+
+.wkd-stat-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.wkd-stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+}
+
+.wkd-stat-unit {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* ── Section titles ────────────────────────────────────────────── */
+
+.wkd-section-title {
+  margin: 0 0 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+/* ── Muscle-group split ────────────────────────────────────────── */
+
+.wkd-split {
+  padding: 20px 22px;
+  border-radius: 18px;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wkd-split-row {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.wkd-split-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.wkd-split-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.wkd-split-pct {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.wkd-split-vol {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.wkd-split-track {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.wkd-split-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+/* ── Per-exercise breakdown ────────────────────────────────────── */
+
+.wkd-breakdown {
+  padding: 20px 22px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.wkd-ex-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.wkd-ex-title {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.wkd-ex-bar {
+  width: 4px;
+  height: 14px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.wkd-ex-vol {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.wkd-ex-notes {
+  margin: -6px 0 12px;
+  padding-left: 12px;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.wkd-sets {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 12px;
+}
+
+.wkd-set {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  padding: 7px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+}
+
+.wkd-set-chip {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── Set-type legend ───────────────────────────────────────────── */
+
+.wkd-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.wkd-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+}
+
+.wkd-legend-chip {
+  width: 16px;
+  height: 16px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* ── Empty state ───────────────────────────────────────────────── */
+
+.wkd-empty {
+  text-align: center;
+  color: var(--text-muted);
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  padding: 60px 0;
+}
+
+/* ── Mobile ────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .wkd-page {
+    padding: 0 16px 32px;
+  }
+
+  .wkd-stats-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .wkd-stat-value {
+    font-size: 24px;
+  }
+
+  .wkd-title {
+    font-size: 20px;
+  }
+
+  .wkd-edit {
+    margin-left: 0;
+  }
+}

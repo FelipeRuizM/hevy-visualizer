@@ -1,25 +1,16 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, type CSSProperties } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card } from '../components/common/Card';
 import { useSettings } from '../context/SettingsContext';
 import { format } from 'date-fns';
-import { ChevronDown, ChevronUp, Pencil, Trophy, MapPin, HeartPulse, Users } from 'lucide-react';
-import { ref, update } from 'firebase/database';
-import { realtimeDb } from '../config/firebase';
+import { ChevronRight, Pencil, Trophy, MapPin, HeartPulse, Users, Clock, Dumbbell, Calendar } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { groupWorkoutSessions, type WorkoutSession } from '../utils/sessions';
-import {
-  SET_TYPES,
-  PR_TYPES,
-  getSetLabel,
-  getSetColor,
-  getSetTypeName,
-  getCategoryStyle,
-  type SetType,
-} from '../utils/workoutDisplay';
+import { getCategoryStyle } from '../utils/workoutDisplay';
 import { computeSetPRs, setPRKey, type SetPR } from '../utils/prEngine';
 import { labelStyle } from '../styles/formStyles';
 import { pageTitleStyle, cardTitleStyle, bodyTextStyle, metaTextStyle, statValueStyle } from '../styles/typography';
+import { sortPeople } from '../utils/people';
 import type { TaggedWorkout } from '../hooks/useWorkouts';
 
 const fmtDuration = (min: number) => {
@@ -28,56 +19,23 @@ const fmtDuration = (min: number) => {
   return h > 0 ? `${h}h ${m}m` : `${m}m`;
 };
 
-// ── PR badge shown next to a set that set a new record ──────────
-const PRBadge: React.FC<{ pr: SetPR }> = ({ pr }) => (
-  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', flexShrink: 0, flexWrap: 'wrap' }}>
-    {PR_TYPES.filter(t => pr[t.key]).map(t => {
-      const Icon = t.icon;
-      return (
-        <span
-          key={t.key}
-          title={t.description}
-          style={{
-            display: 'inline-flex', alignItems: 'center', gap: '4px',
-            background: `${t.color}1F`, color: t.color,
-            border: `1px solid ${t.color}59`, borderRadius: '999px',
-            padding: '2px 8px', fontSize: '10px', fontWeight: 700,
-            fontFamily: 'Inter', textTransform: 'uppercase', letterSpacing: '0.04em',
-          }}
-        >
-          <Icon size={11} /> {t.short}
-        </span>
-      );
-    })}
-  </span>
-);
+// Shared styling for an icon + value metric on the card.
+const metricStyle: CSSProperties = { display: 'inline-flex', alignItems: 'center', gap: '5px' };
+const mutedIcon: CSSProperties = { color: 'var(--text-muted)' };
 
 // ── WorkoutCard (historical session) ──────────────────────────
+// A compact summary that navigates to the full session detail page on click.
 const WorkoutCard: React.FC<{
   session: WorkoutSession;
   unit: string;
   setPRs: Map<string, SetPR>;
   onEdit: (session: WorkoutSession) => void;
-}> = ({ session, unit, setPRs, onEdit }) => {
-  const { user, canWrite } = useAuth();
-  const uid = user?.uid;
-  const [isOpen, setIsOpen] = useState(false);
-  const [showSavedToast, setShowSavedToast] = useState(false);
+  onOpen: (session: WorkoutSession) => void;
+}> = ({ session, unit, setPRs, onEdit, onOpen }) => {
+  const { canWrite } = useAuth();
   const multiplier = unit === 'lbs' ? 2.20462 : 1;
 
   const { color: catColor, icon: CatIcon } = getCategoryStyle(session.category);
-
-  const handleCategoryChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newCategory = e.target.value;
-    if (!session.id || !uid) return;
-    try {
-      await update(ref(realtimeDb, `/users/${uid}/workouts/${session.id}`), { category: newCategory });
-      setShowSavedToast(true);
-      setTimeout(() => setShowSavedToast(false), 2000);
-    } catch (err) {
-      console.error('[DB] Error updating category:', err);
-    }
-  };
 
   // Count records broken in this session (each type counts) for a header badge.
   const prCount = useMemo(() => {
@@ -91,32 +49,22 @@ const WorkoutCard: React.FC<{
     return n;
   }, [session, setPRs]);
 
+  const people = useMemo(() => sortPeople(session.people), [session.people]);
+
   return (
     <Card style={{ position: 'relative', cursor: 'pointer', transition: 'all 0.3s ease', borderLeft: `4px solid ${catColor}` }}>
-      {/* Saved toast */}
-      <div style={{
-        position: 'absolute', top: '16px', right: '16px',
-        background: 'rgba(46, 204, 113, 0.1)', color: '#2ecc71',
-        padding: '4px 8px', borderRadius: '6px', fontSize: '12px',
-        fontWeight: 'bold', fontFamily: 'Inter',
-        opacity: showSavedToast ? 1 : 0, pointerEvents: 'none',
-        transition: 'opacity 0.3s ease', zIndex: 10,
-      }}>
-        ✓ Saved
-      </div>
-
-      <div onClick={() => setIsOpen(!isOpen)} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        {/* Header row — mirrors the Run card: small icon, 16px title, date on the right */}
-        <div style={{
-          display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '12px',
-          borderBottom: isOpen ? '1px solid var(--glass-border)' : 'none',
-          paddingBottom: isOpen ? '14px' : '0',
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', minWidth: 0 }}>
+      <div onClick={() => onOpen(session)} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        {/* Header row — title on the left (free to wrap), category + PRs pinned together on the right */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', minWidth: 0, flex: 1 }}>
             <CatIcon size={16} color={catColor} style={{ flexShrink: 0 }} />
             <h3 style={cardTitleStyle}>{session.title || 'Workout'}</h3>
+          </div>
+
+          {/* Right cluster — never wraps; category chip + PR badge stay side by side */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
             <span style={{
-              fontSize: '11px', fontFamily: 'Inter', fontWeight: 700,
+              fontSize: '11px', fontFamily: 'Inter', fontWeight: 700, whiteSpace: 'nowrap',
               textTransform: 'uppercase', letterSpacing: '0.05em',
               color: catColor, background: `${catColor}1A`,
               border: `1px solid ${catColor}40`, borderRadius: '999px', padding: '2px 10px',
@@ -127,7 +75,7 @@ const WorkoutCard: React.FC<{
               <span
                 title={`${prCount} personal record${prCount > 1 ? 's' : ''} this session`}
                 style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '4px',
+                  display: 'inline-flex', alignItems: 'center', gap: '4px', whiteSpace: 'nowrap',
                   fontSize: '11px', fontFamily: 'Inter', fontWeight: 700,
                   color: '#FFC400', background: 'rgba(255,196,0,0.12)',
                   border: '1px solid rgba(255,196,0,0.35)', borderRadius: '999px', padding: '2px 10px',
@@ -136,68 +84,31 @@ const WorkoutCard: React.FC<{
                 <Trophy size={12} /> {prCount} PR{prCount > 1 ? 's' : ''}
               </span>
             )}
-            {isOpen
-              ? <ChevronUp size={18} color="var(--accent-pink-main)" />
-              : <ChevronDown size={18} color="var(--text-muted)" />}
-          </div>
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexShrink: 0 }}>
-            <span style={{ ...metaTextStyle, whiteSpace: 'nowrap' }}>
-              {format(session.startTime, 'd MMM, HH:mm')}
-            </span>
-            {canWrite && (
-              <div onClick={e => e.stopPropagation()} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <select
-                  value={session.category || 'Mixed'}
-                  onChange={handleCategoryChange}
-                  title="Change category"
-                  style={{
-                    background: 'rgba(255,255,255,0.05)', color: catColor,
-                    border: `1px solid ${catColor}55`, padding: '5px 8px', fontSize: '12px',
-                    borderRadius: '8px', fontFamily: 'Inter', fontWeight: 'bold',
-                    outline: 'none', cursor: 'pointer', appearance: 'auto',
-                  }}
-                >
-                  {['Push', 'Pull', 'Legs', 'Mixed'].map(c => (
-                    <option key={c} value={c} style={{ background: 'var(--bg-dark)' }}>{c}</option>
-                  ))}
-                </select>
-                <button
-                  onClick={() => onEdit(session)}
-                  title="Edit workout"
-                  style={{
-                    width: '30px', height: '30px',
-                    background: 'rgba(255,255,255,0.05)',
-                    border: '1px solid var(--glass-border)',
-                    borderRadius: '8px', cursor: 'pointer',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    color: 'var(--text-secondary)', transition: 'all 0.15s',
-                  }}
-                >
-                  <Pencil size={14} />
-                </button>
-              </div>
-            )}
+            <ChevronRight size={18} color="var(--text-muted)" style={{ flexShrink: 0 }} />
           </div>
         </div>
 
-        {/* Metrics row — compact, like the Run card */}
-        <div style={{ ...bodyTextStyle, display: 'flex', gap: '18px', flexWrap: 'wrap', paddingTop: isOpen ? '0' : '2px' }}>
-          <span>{Math.round(session.durSeconds / 60)} min</span>
-          <span>{Math.round(session.volume * multiplier).toLocaleString()} {unit}</span>
+        {/* Metrics row — compact, like the Run card; every value carries an icon */}
+        <div style={{ ...bodyTextStyle, display: 'flex', gap: '18px', flexWrap: 'wrap', paddingTop: '2px' }}>
+          <span style={metricStyle}>
+            <Clock size={13} style={mutedIcon} /> {Math.round(session.durSeconds / 60)} min
+          </span>
+          <span style={metricStyle}>
+            <Dumbbell size={13} style={mutedIcon} /> {Math.round(session.volume * multiplier).toLocaleString()} {unit}
+          </span>
           {session.avgHeartRate > 0 && (
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+            <span style={metricStyle}>
               <HeartPulse size={13} style={{ color: '#FB7185' }} /> {session.avgHeartRate} bpm
             </span>
           )}
           {session.gym && (
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-              <MapPin size={13} /> {session.gym}
+            <span style={metricStyle}>
+              <MapPin size={13} style={mutedIcon} /> {session.gym}
             </span>
           )}
-          {session.people.length > 0 && (
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-              <Users size={13} style={{ color: '#60A5FA' }} /> {session.people.join(', ')}
+          {people.length > 0 && (
+            <span style={metricStyle}>
+              <Users size={13} style={{ color: '#60A5FA' }} /> {people.join(', ')}
             </span>
           )}
         </div>
@@ -209,72 +120,31 @@ const WorkoutCard: React.FC<{
           </div>
         )}
 
-        {/* Expanded exercise list */}
-        {isOpen && (
-          <div
-            style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginTop: '16px' }}
-            onClick={e => e.stopPropagation()}
-          >
-            {Array.from(session.exercises.entries()).map(([exTitle, rawSets]) => {
-              const sets = rawSets.slice().sort((a, b) => (a.setIndex ?? 0) - (b.setIndex ?? 0));
-              const notes = rawSets[0]?.exerciseNotes;
-              return (
-                <div key={exTitle}>
-                  <h4 style={{ fontSize: '15px', color: 'var(--text-primary)', marginBottom: notes ? '6px' : '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <div style={{ width: '4px', height: '14px', background: catColor, borderRadius: '4px' }} />
-                    {exTitle}
-                  </h4>
-                  {notes && (
-                    <p style={{ margin: '0 0 12px', paddingLeft: '12px', color: 'var(--text-muted)', fontFamily: 'Inter', fontSize: '13px', fontStyle: 'italic' }}>
-                      {notes}
-                    </p>
-                  )}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', paddingLeft: '12px' }}>
-                    {sets.map((set, idx) => {
-                      const pr = setPRs.get(setPRKey(set.id, exTitle, set.setIndex));
-                      const setType = set.setType as SetType;
-                      const color = getSetColor(setType);
-                      return (
-                        <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', padding: '7px 0', borderBottom: '1px dashed rgba(255,255,255,0.05)' }}>
-                          {/* Set-type chip */}
-                          <span style={{
-                            width: '28px', height: '28px', borderRadius: '8px', flexShrink: 0,
-                            display: 'flex', alignItems: 'center', justifyContent: 'center',
-                            background: setType === 'normal' ? 'rgba(255,255,255,0.05)' : `${color}1A`,
-                            color, fontWeight: 700, fontSize: '12px', fontFamily: 'Inter',
-                          }}>
-                            {getSetLabel(sets, idx)}
-                          </span>
-                          {setType !== 'normal' && (
-                            <span style={{ fontSize: '12px', color, fontFamily: 'Inter', fontWeight: 600, minWidth: '54px' }}>
-                              {getSetTypeName(setType)}
-                            </span>
-                          )}
-                          <span style={{ fontWeight: 500, fontFamily: 'Inter' }}>
-                            {Math.round(set.weightKg * multiplier)} {unit}
-                            <span style={{ color: 'var(--text-muted)', margin: '0 4px' }}>×</span>
-                            {set.reps} reps
-                          </span>
-                          {pr && <PRBadge pr={pr} />}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              );
-            })}
-
-            {/* Set-type legend */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', paddingTop: '4px' }}>
-              {SET_TYPES.filter(t => t.key !== 'normal').map(t => (
-                <span key={t.key} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '11px', color: 'var(--text-muted)', fontFamily: 'Inter' }}>
-                  <span style={{ width: '16px', height: '16px', borderRadius: '5px', background: `${t.color}1A`, color: t.color, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '9px', fontWeight: 700 }}>{t.label}</span>
-                  {t.name}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
+        {/* Footer — date + (owner) edit control */}
+        <div
+          style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '10px' }}
+          onClick={e => e.stopPropagation()}
+        >
+          <span style={{ ...metaTextStyle, display: 'inline-flex', alignItems: 'center', gap: '5px', whiteSpace: 'nowrap' }}>
+            <Calendar size={12} style={mutedIcon} /> {format(session.startTime, 'd MMM, HH:mm')}
+          </span>
+          {canWrite && (
+            <button
+              onClick={() => onEdit(session)}
+              title="Edit workout"
+              style={{
+                width: '30px', height: '30px',
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid var(--glass-border)',
+                borderRadius: '8px', cursor: 'pointer',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                color: 'var(--text-secondary)', transition: 'all 0.15s',
+              }}
+            >
+              <Pencil size={14} />
+            </button>
+          )}
+        </div>
       </div>
     </Card>
   );
@@ -335,6 +205,7 @@ export const Workouts: React.FC<{ workouts: TaggedWorkout[] }> = ({ workouts }) 
             unit={unit}
             setPRs={setPRs}
             onEdit={(s) => navigate(`/add/workout?edit=${s.id}`)}
+            onOpen={(s) => navigate(`/workouts/${s.id}`)}
           />
         ))}
         {sessions.length === 0 && (
