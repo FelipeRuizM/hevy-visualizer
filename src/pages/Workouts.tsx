@@ -3,14 +3,25 @@ import { useNavigate } from 'react-router-dom';
 import { Card } from '../components/common/Card';
 import { useSettings } from '../context/SettingsContext';
 import { format } from 'date-fns';
+<<<<<<< HEAD
 import { ChevronRight, Pencil, Trophy, MapPin, HeartPulse, Users, Clock, Dumbbell, Calendar } from 'lucide-react';
+=======
+import { Activity, ChevronDown, ChevronUp, Pencil, Trophy, MapPin, HeartPulse, Users } from 'lucide-react';
+import { ref, update } from 'firebase/database';
+import { realtimeDb } from '../config/firebase';
+>>>>>>> 2ecdbda2a429fed54093b092cd3c81f2ef58b793
 import { useAuth } from '../context/AuthContext';
 import { groupWorkoutSessions, type WorkoutSession } from '../utils/sessions';
 import { getCategoryStyle } from '../utils/workoutDisplay';
 import { computeSetPRs, setPRKey, type SetPR } from '../utils/prEngine';
 import { labelStyle } from '../styles/formStyles';
+<<<<<<< HEAD
 import { pageTitleStyle, cardTitleStyle, bodyTextStyle, metaTextStyle, statValueStyle } from '../styles/typography';
 import { sortPeople } from '../utils/people';
+=======
+import { sectionTitleStyle, cardTitleStyle, bodyTextStyle, metaTextStyle, statValueStyle } from '../styles/typography';
+import { PageHeader } from '../components/common/PageHeader';
+>>>>>>> 2ecdbda2a429fed54093b092cd3c81f2ef58b793
 import type { TaggedWorkout } from '../hooks/useWorkouts';
 
 const fmtDuration = (min: number) => {
@@ -53,11 +64,35 @@ const WorkoutCard: React.FC<{
 
   return (
     <Card style={{ position: 'relative', cursor: 'pointer', transition: 'all 0.3s ease', borderLeft: `4px solid ${catColor}` }}>
+<<<<<<< HEAD
       <div onClick={() => onOpen(session)} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
         {/* Header row — title on the left (free to wrap), category + PRs pinned together on the right */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', minWidth: 0, flex: 1 }}>
             <CatIcon size={16} color={catColor} style={{ flexShrink: 0 }} />
+=======
+      {/* Saved toast */}
+      <div style={{
+        position: 'absolute', top: '16px', right: '16px',
+        background: 'rgba(46, 204, 113, 0.1)', color: '#2ecc71',
+        padding: '4px 8px', borderRadius: '6px', fontSize: '12px',
+        fontWeight: 'bold', fontFamily: 'Inter',
+        opacity: showSavedToast ? 1 : 0, pointerEvents: 'none',
+        transition: 'opacity 0.3s ease', zIndex: 10,
+      }}>
+        ✓ Saved
+      </div>
+
+      <div onClick={() => setIsOpen(!isOpen)} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        {/* Header row — mirrors the Run card: small icon, 16px title, date on the right */}
+        <div style={{
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '12px',
+          borderBottom: isOpen ? '1px solid var(--glass-border)' : 'none',
+          paddingBottom: isOpen ? '14px' : '0',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', minWidth: 0 }}>
+            <CatIcon size={20} color={catColor} style={{ flexShrink: 0 }} />
+>>>>>>> 2ecdbda2a429fed54093b092cd3c81f2ef58b793
             <h3 style={cardTitleStyle}>{session.title || 'Workout'}</h3>
           </div>
 
@@ -171,6 +206,7 @@ export const Workouts: React.FC<{ workouts: TaggedWorkout[] }> = ({ workouts }) 
 
   return (
     <div style={{ padding: '24px', animation: 'fadeIn 0.5s ease-out', paddingBottom: '64px', maxWidth: '1200px', margin: '0 auto', width: '100%', boxSizing: 'border-box' }}>
+      <PageHeader icon={Activity} title="Workouts" />
 
       {/* Stats */}
       <div
@@ -178,7 +214,7 @@ export const Workouts: React.FC<{ workouts: TaggedWorkout[] }> = ({ workouts }) 
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
           gap: '16px',
-          marginBottom: '32px',
+          marginBottom: '24px',
         }}
       >
         <Card>
@@ -195,9 +231,9 @@ export const Workouts: React.FC<{ workouts: TaggedWorkout[] }> = ({ workouts }) 
         </Card>
       </div>
 
-      <h2 style={{ ...pageTitleStyle, marginBottom: '24px' }}>Workout History</h2>
+      <h3 style={{ ...sectionTitleStyle, marginBottom: '24px' }}>History</h3>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', width: '100%' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '100%' }}>
         {sessions.map(session => (
           <WorkoutCard
             key={session.startTime.getTime().toString()}
