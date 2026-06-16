@@ -1,0 +1,1 @@
+var e=e=>[...e].sort((e,t)=>e.localeCompare(t,void 0,{sensitivity:`base`}));export{e as t};

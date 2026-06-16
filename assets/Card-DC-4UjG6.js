@@ -1,0 +1,1 @@
+import"./rolldown-runtime-Dw2cE7zH.js";import{b as e}from"./charts-mudsqbig.js";import{V as t}from"./react-CXIoYqvR.js";e();var n=t(),r=({children:e,className:t=``,style:r})=>(0,n.jsx)(`div`,{className:`card ${t}`,style:r,children:e});export{r as t};

@@ -1,0 +1,1 @@
+import{t as e}from"./addDays-zkWm9d53.js";import{t}from"./addMonths-DYAk71wN.js";function n(e,n,r){return t(e,n*12,r)}function r(t,n,r){return e(t,-n,r)}function i(e,t,r){return n(e,-t,r)}export{r as n,i as t};
