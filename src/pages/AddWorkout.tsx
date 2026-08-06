@@ -12,7 +12,8 @@ import { useGyms } from '../context/GymsContext';
 import { usePeople } from '../context/PeopleContext';
 import { MUSCLE_GROUPS, getLastExerciseSession } from '../utils/workoutUtils';
 import { groupWorkoutSessions } from '../utils/sessions';
-import { SET_TYPES, getSetLabel, getSetColor, type SetType } from '../utils/workoutDisplay';
+import { SET_TYPES, DEFAULT_REPS, getSetLabel, getSetColor, type SetType } from '../utils/workoutDisplay';
+import { BODYWEIGHT_EXERCISES, getBodyweightAddition } from '../utils/bodyweight';
 import { Card } from '../components/common/Card';
 import { PeoplePicker } from '../components/common/PeoplePicker';
 import { inputStyle, selectStyle, labelStyle } from '../styles/formStyles';
@@ -40,11 +41,6 @@ const colHeaderStyle: React.CSSProperties = {
   fontWeight: 600,
   textAlign: 'center',
 };
-
-// Mirror of useWorkouts.ts — bodyweight is added to weightKg on read for these.
-const BODYWEIGHT_EXERCISES = ['Pull Up', 'Chin Up', 'Dip', 'Push Up', 'Muscle Up'];
-const getBodyweightAddition = (startTime: Date) =>
-  startTime >= new Date('2026-02-01') ? 80 : 73;
 
 export const AddWorkout: React.FC<{ workouts: TaggedWorkout[] }> = ({ workouts }) => {
   const { unit } = useSettings();
@@ -261,8 +257,19 @@ export const AddWorkout: React.FC<{ workouts: TaggedWorkout[] }> = ({ workouts }
       ei !== exIdx ? ex : { ...ex, sets: ex.sets.map((s, si) => si === sIdx ? { ...s, [field]: value } : s) }
     ));
 
+  // Switching a set's type also prefills the reps that type usually calls for
+  // (warmup 15, feeder 4, working 8); types with no default keep their reps.
   const chooseSetType = (exIdx: number, sIdx: number, type: SetType) => {
-    updateSet(exIdx, sIdx, 'setType', type);
+    setLogExercises(prev => prev.map((ex, ei) =>
+      ei !== exIdx ? ex : {
+        ...ex,
+        sets: ex.sets.map((s, si) => {
+          if (si !== sIdx || s.setType === type) return s;
+          const reps = DEFAULT_REPS[type];
+          return { ...s, setType: type, reps: reps ?? s.reps };
+        }),
+      },
+    ));
     setSetMenu(null);
   };
 

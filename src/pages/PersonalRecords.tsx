@@ -28,6 +28,29 @@ const muscleColor = (group: string) => MUSCLE_COLORS[group] ?? MUSCLE_COLORS.Oth
 const MUSCLE_ORDER = ['Chest', 'Back', 'Legs', 'Shoulders', 'Arms', 'Core', 'Other']
   .filter(g => (MUSCLE_GROUPS as readonly string[]).includes(g));
 
+/**
+ * Buckets records into muscle-group sections, ordered by MUSCLE_ORDER. Groups
+ * the DB doesn't know about fall back to "Other" so nothing silently vanishes.
+ * `sortWithin` is optional — omit it to keep the incoming order (e.g. the
+ * owner-chosen order of the featured records).
+ */
+const groupByMuscle = (
+  items: PRData[],
+  getMuscleGroup: (exerciseTitle: string) => string,
+  sortWithin?: (a: PRData, b: PRData) => number,
+): { group: string; items: PRData[] }[] => {
+  const map = new Map<string, PRData[]>();
+  items.forEach(pr => {
+    const mg = getMuscleGroup(pr.exerciseTitle);
+    const key = MUSCLE_ORDER.includes(mg) ? mg : 'Other';
+    const arr = map.get(key) ?? [];
+    arr.push(pr);
+    map.set(key, arr);
+  });
+  if (sortWithin) map.forEach(arr => arr.sort(sortWithin));
+  return MUSCLE_ORDER.filter(g => map.has(g)).map(g => ({ group: g, items: map.get(g)! }));
+};
+
 const emptyPR = (title: string): PRData => ({
   exerciseTitle: title,
   maxWeight: 0,
@@ -38,6 +61,15 @@ const emptyPR = (title: string): PRData => ({
   maxVolumeDate: new Date(),
   daysSinceLastPR: 0,
 });
+
+// Muscle-group heading shared by the Featured and Hall of Fame sections.
+const GroupLabel: React.FC<{ group: string; count: number }> = ({ group, count }) => (
+  <div className="pr-group-label">
+    <span className="pr-group-dot" style={{ background: muscleColor(group) }} />
+    {group}
+    <span className="pr-group-count">{count}</span>
+  </div>
+);
 
 // ── Exercise search → jumps to the per-exercise detail page ──────────────────
 const ExerciseSearch: React.FC<{ exercises: string[] }> = ({ exercises }) => {
@@ -133,19 +165,21 @@ export const PersonalRecords: React.FC<{ workouts: TaggedWorkout[] }> = ({ worko
     [featuredCards],
   );
 
+  // Featured records keep their chosen order, split into muscle-group sections.
+  const featuredGroups = useMemo(
+    () => groupByMuscle(featuredCards, getMuscleGroup),
+    [featuredCards, getMuscleGroup],
+  );
+
   // ── Everything else, grouped by muscle group ──────────────────────────────
-  const groups = useMemo(() => {
-    const map = new Map<string, PRData[]>();
-    prs.forEach(pr => {
-      if (featuredKeys.has(pr.exerciseTitle.toLowerCase())) return;
-      const mg = getMuscleGroup(pr.exerciseTitle);
-      const arr = map.get(mg) ?? [];
-      arr.push(pr);
-      map.set(mg, arr);
-    });
-    map.forEach(arr => arr.sort((a, b) => b.maxWeight - a.maxWeight));
-    return MUSCLE_ORDER.filter(g => map.has(g)).map(g => ({ group: g, items: map.get(g)! }));
-  }, [prs, featuredKeys, getMuscleGroup]);
+  const groups = useMemo(
+    () => groupByMuscle(
+      prs.filter(pr => !featuredKeys.has(pr.exerciseTitle.toLowerCase())),
+      getMuscleGroup,
+      (a, b) => b.maxWeight - a.maxWeight,
+    ),
+    [prs, featuredKeys, getMuscleGroup],
+  );
 
   const [muscleFilter, setMuscleFilter] = useState<string>('All');
   const visibleGroups = muscleFilter === 'All' ? groups : groups.filter(g => g.group === muscleFilter);
@@ -242,15 +276,19 @@ export const PersonalRecords: React.FC<{ workouts: TaggedWorkout[] }> = ({ worko
         <div className="pr-empty">No records yet — log a few workouts to start setting PRs.</div>
       ) : (
         <>
-          {/* ── Featured ──────────────────────────────────────────── */}
+          {/* ── Featured, organized by muscle group ───────────────── */}
           <div className="pr-section-head">
             <Star size={18} color="var(--accent-pink-main)" />
             <h3 className="pr-section-title">Featured</h3>
-            <span className="pr-section-hint">Set these in Settings → Featured Records</span>
           </div>
-          <div className="pr-featured-grid">
-            {featuredCards.map(pr => renderCard(pr, 'featured'))}
-          </div>
+          {featuredGroups.map(({ group, items }) => (
+            <div key={group} className="pr-muscle-group">
+              <GroupLabel group={group} count={items.length} />
+              <div className="pr-featured-grid">
+                {items.map(pr => renderCard(pr, 'featured'))}
+              </div>
+            </div>
+          ))}
 
           {/* ── Hall of Fame, organized by muscle group ───────────── */}
           {groups.length > 0 && (
@@ -281,11 +319,7 @@ export const PersonalRecords: React.FC<{ workouts: TaggedWorkout[] }> = ({ worko
 
               {visibleGroups.map(({ group, items }) => (
                 <div key={group} className="pr-muscle-group">
-                  <div className="pr-group-label">
-                    <span className="pr-group-dot" style={{ background: muscleColor(group) }} />
-                    {group}
-                    <span className="pr-group-count">{items.length}</span>
-                  </div>
+                  <GroupLabel group={group} count={items.length} />
                   <div className="pr-hof-grid">
                     {items.map(pr => renderCard(pr, 'hof'))}
                   </div>

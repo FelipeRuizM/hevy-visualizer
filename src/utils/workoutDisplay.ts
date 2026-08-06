@@ -16,14 +16,29 @@ export const SET_TYPES: { key: SetType; label: string; name: string; color: stri
   { key: 'failure', label: 'F',  name: 'Failure',  color: '#EF4444' },
 ];
 
-/** Label for a set: a running count for normal sets, the type abbreviation otherwise. */
+/**
+ * Set types that count toward the running working-set number. Failure sets are
+ * real working sets — they just get their own chip — so a warmup, a failure set
+ * and a normal set read as "W, F, 2".
+ */
+export const isWorkingSet = (type: SetType) => type === 'normal' || type === 'working' || type === 'failure';
+
+/** Reps prefilled when a set's type changes. Types absent here keep their reps. */
+export const DEFAULT_REPS: Partial<Record<SetType, number>> = {
+  warmup: 15,
+  feeder: 4,
+  normal: 8,
+  working: 8,
+};
+
+/** Label for a set: a running count for working sets, the type abbreviation otherwise. */
 export const getSetLabel = (sets: { setType: SetType }[], idx: number): string => {
   const s = sets[idx];
-  if (s.setType !== 'normal') {
+  if (s.setType !== 'normal' && s.setType !== 'working') {
     return SET_TYPES.find(t => t.key === s.setType)?.label ?? '?';
   }
   let n = 0;
-  for (let i = 0; i <= idx; i++) if (sets[i].setType === 'normal') n++;
+  for (let i = 0; i <= idx; i++) if (isWorkingSet(sets[i].setType)) n++;
   return n.toString();
 };
 

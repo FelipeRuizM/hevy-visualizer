@@ -15,9 +15,9 @@ on every push to `main`.
 **Page header** — every page except the Dashboard opens with the shared `PageHeader`
 component (`src/components/common/PageHeader.tsx`): a 28px pink-accent icon + the page
 title, 24px below it the content. Use the tab's sidebar icon (Activity for Workouts,
-Footprints for Running, Trophy for Records, BarChart3 for Analytics, CalendarDays for
-Monthly, Settings for Settings). Pages also share a 24px top padding so headers line up
-across tabs.
+Footprints for Running, Trophy for Records, Calculator for Calculator, BarChart3 for
+Analytics, CalendarDays for Monthly, Settings for Settings). Pages also share a 24px top
+padding so headers line up across tabs.
 
 **Typography scale** — defined in `src/styles/typography.ts`; always import from there
 instead of hand-rolling font styles. The hierarchy every page follows:
@@ -59,6 +59,9 @@ pill rows wrap. Check layouts at ~375px width when touching UI.
 - Workout history is flat sets grouped into sessions via `groupWorkoutSessions`.
 - Exercise → muscle-group mapping comes from the DB (`useExercises().getMuscleGroup`),
   never hardcoded.
+- Bodyweight lifts (Pull Up, Dip, …) log the *added* load but are reasoned about as the
+  total moved: `useWorkouts` folds bodyweight in on read, the logger strips it back off
+  for entry. Use `src/utils/bodyweight.ts` — never re-declare the list or the constant.
 
 ## Versioning
 

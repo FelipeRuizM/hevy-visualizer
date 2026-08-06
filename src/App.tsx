@@ -11,6 +11,7 @@ const Workouts = lazy(() => import('./pages/Workouts').then(m => ({ default: m.W
 const AddWorkout = lazy(() => import('./pages/AddWorkout').then(m => ({ default: m.AddWorkout })));
 const AddRun = lazy(() => import('./pages/AddRun').then(m => ({ default: m.AddRun })));
 const PersonalRecords = lazy(() => import('./pages/PersonalRecords').then(m => ({ default: m.PersonalRecords })));
+const Calculator = lazy(() => import('./pages/Calculator').then(m => ({ default: m.Calculator })));
 const ExerciseDetail = lazy(() => import('./pages/ExerciseDetail').then(m => ({ default: m.ExerciseDetail })));
 const WorkoutDetail = lazy(() => import('./pages/WorkoutDetail').then(m => ({ default: m.WorkoutDetail })));
 const Analytics = lazy(() => import('./pages/Analytics').then(m => ({ default: m.Analytics })));
@@ -66,6 +67,7 @@ function AuthedApp() {
           <Route path="add/workout" element={<AddWorkout workouts={workouts} />} />
           <Route path="add/run" element={<AddRun />} />
           <Route path="records" element={<PersonalRecords workouts={workouts} />} />
+          <Route path="calculator" element={<Calculator workouts={workouts} />} />
           <Route path="exercises/:name" element={<ExerciseDetail workouts={workouts} />} />
           <Route path="analytics" element={<Analytics workouts={workouts} />} />
           <Route path="monthly" element={<MonthlyReports workouts={workouts} />} />

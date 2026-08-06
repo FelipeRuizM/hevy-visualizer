@@ -4,6 +4,7 @@ import { parse } from 'date-fns';
 import { realtimeDb } from '../config/firebase';
 import { ref, onValue } from 'firebase/database';
 import { useAuth } from '../context/AuthContext';
+import { isBodyweightExercise, getBodyweightAddition } from '../utils/bodyweight';
 
 export type TaggedWorkout = WorkoutSet & { id: string, category?: string };
 
@@ -46,7 +47,6 @@ export const useWorkouts = () => {
       return;
     }
     setLoading(true);
-    const BODYWEIGHT_EXERCISES = ['Pull Up', 'Chin Up', 'Dip', 'Push Up', 'Muscle Up'];
 
     const parseDataToFlat = (data: NonNullable<RawWorkouts>): TaggedWorkout[] => {
       const flatData: TaggedWorkout[] = [];
@@ -66,12 +66,11 @@ export const useWorkouts = () => {
           if (isNaN(startTime.getTime())) startTime = new Date(startTimeString);
         } catch { /* keep fallback */ }
 
-        const isFeb1OrLater = startTime >= new Date('2026-02-01');
-        const bodyweightAddition = isFeb1OrLater ? 80 : 73;
+        const bodyweightAddition = getBodyweightAddition(startTime);
 
         item.exercises.forEach((ex) => {
           const rootTitle = ex.exercise_title || '';
-          const isBodyweight = BODYWEIGHT_EXERCISES.includes(rootTitle);
+          const isBodyweight = isBodyweightExercise(rootTitle);
 
           (ex.sets ?? []).forEach((s) => {
             let finalWeight = Number(s.weight_kg) || 0;
